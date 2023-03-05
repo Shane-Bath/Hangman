@@ -20,7 +20,8 @@ list_words = words.col_values(1)
 
 random_word = random.choice(list_words)
 selected_word = list(random_word)
-split = random_word.split()
+# split = random_word.split()
+split = [*random_word]
 print(random_word)
 print(selected_word)
 print(split)
@@ -29,9 +30,8 @@ print(split)
 create a function that replaces a letter with a "_" 
 """
 
-placeholder = "__"
+placeholder = "_"*len(selected_word)
 print(placeholder)
 
-
-
-animal = ['Goose', 'gibbon', 'frog', 'Giraffe', 'Gecko',  ]
+# for i in range(len(selected_word)):
+#     letter = 
