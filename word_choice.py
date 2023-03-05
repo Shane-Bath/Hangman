@@ -18,20 +18,46 @@ data = words.get_all_values()
 
 list_words = words.col_values(1)
 
-random_word = random.choice(list_words)
-selected_word = list(random_word)
-# split = random_word.split()
-split = [*random_word]
-print(random_word)
+random_word = random.choice(list_words).lower()
+# selected_word = list(random_word)
+# split = random_word.split() not using 
+selected_word = [*random_word]
+# print(random_word)
 print(selected_word)
-print(split)
+# print(split) not using 
+placeholder = "_"*len(selected_word)
+print(f"{list(placeholder)}")
+
+user_input = input("Guess a letter: ")
+print(user_input)
+
+"""
+create a loop to match the user input with a letter in the word and replace the blank
+"""
+
+# if user_input == a letter in the selected_word replace the placeholder with the letter 
+# from user_input. if it does not match ask the player to guess agian - range(len())
+
+for letter in range(len(selected_word)):
+    match = selected_word[letter]
+    
+    if match == user_input:
+        placeholder[letter] = match
+       
+        
+       
 
 """ 
 create a function that replaces a letter with a "_" 
 """
 
-placeholder = "_"*len(selected_word)
-print(placeholder)
 
-# for i in range(len(selected_word)):
-#     letter = 
+
+# def hangman():
+#     if i in range(len(selected_word)):
+#         choice = user_input()
+#         index = selected_word.index(choice)
+#         placeholder = placeholder[:index] + selected_word + placeholder[index + 1:]
+#         print(placeholder)
+
+# hangman()
