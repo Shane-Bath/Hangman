@@ -19,7 +19,11 @@ data = words.get_all_values()
 list_words = words.col_values(1)
 
 random_word = random.choice(list_words)
+placeholder = list(random_word)
+split = random_word.split()
 print(random_word)
+print(placeholder)
+print(split)
 
 
 
