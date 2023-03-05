@@ -1,6 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
-
+import random
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -16,7 +16,12 @@ words = SHEET.worksheet('words')
 
 data = words.get_all_values()
 
-print(data)
+list_words = words.col_values(1)
+
+random_word = random.choice(list_words)
+print(random_word)
+
+
 
 
 animal = ['Goose', 'gibbon', 'frog', 'Giraffe', 'Gecko',  ]
