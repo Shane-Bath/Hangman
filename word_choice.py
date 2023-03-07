@@ -38,55 +38,37 @@ print(selected_word)
 # invite player to guess the letter
 user_input = input("Guess a letter: ")
 # I have to save the letter to a variable?
+#
 letter_guess = user_input.lower()
-print(letter_guess)
+# print(letter_guess)
 
 # check of the letter is in word, if not record wrong guess
 # Need to keep count of guess, set max number of guess or min number of guess
 # if right guess, print the letter
 # if incorrect add to wrong guess and draw hangman
 wrong_guesses = 0
+display = ""
+def check_letter():
+    for letter in selected_word:
+        if letter in letter_guess:
+        # print(f"You have guessed the correct letter {letter_guess} !")
+        display.append(letter_guess)
+            # print(f"{letter_guess}")
+        else:
+            display.append("_")
+            # print("_")
+    return display
 
-for letter in selected_word:
-    if letter in letter_guess:
-        print(f"{letter_guess}")
-    else:
-        print("_")
 
+check_letter()
 
+# 1 . the word prints in a vertical column, how to print in a line .append??
+# 2. Can i record incorrect guesses in the same loop - NO need to find solution 
+# 3. print message to tell the player is guessed the right letter
+# 4. remove two letter options from Gsheet list.
+# 5. add ascii images.
 
 
 # if wrong_guesses == 4:
 #     break 
 # print("Game over!") 
-
-"""
-create a loop to match the user input with a letter in the word and replace the blank
-"""
-
-# if user_input == a letter in the selected_word replace the placeholder with the letter 
-# from user_input. if it does not match ask the player to guess agian - range(len())
-
-# for letter in range(len(selected_word)):
-#     match = selected_word[letter]
-    
-#     if match == user_input:
-#         placeholder[:match] + selected_word + placeholder[match + 1:]
-       
-        
-       
-
-""" 
-create a function that replaces a letter with a "_" 
-"""
-
-
-
-# def hangman():
-#     if i in range(len(selected_word)):
-#         choice = user_input()
-#         index = selected_word.index(choice)
-#         placeholder = placeholder[:index] + selected_word + placeholder[index + 1:]
-#         print(placeholder)
-
-# hangman()
