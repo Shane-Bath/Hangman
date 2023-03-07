@@ -47,12 +47,12 @@ letter_guess = user_input.lower()
 # if right guess, print the letter
 # if incorrect add to wrong guess and draw hangman
 wrong_guesses = 0
-display = ""
+display = []
 def check_letter():
     for letter in selected_word:
         if letter in letter_guess:
         # print(f"You have guessed the correct letter {letter_guess} !")
-        display.append(letter_guess)
+            display.append(letter_guess)
             # print(f"{letter_guess}")
         else:
             display.append("_")
@@ -62,8 +62,14 @@ def check_letter():
 
 check_letter()
 
+# issues to resolve tomorrow
+
 # 1 . the word prints in a vertical column, how to print in a line .append??
-# 2. Can i record incorrect guesses in the same loop - NO need to find solution 
+# 1.1 'str' object has no attribute 'append'. I dont want a list...
+# 1.2 should i pass a parameters check_letter? selected_word, letter_guess ?
+# 1.3 will the end= "" work?  https://www.toppr.com/guides/python-guide/questions/what-does-end-do-in-python/
+# 1.4 https://www.geeksforgeeks.org/gfact-50-python-end-parameter-in-print/
+# 2. Can i record incorrect guesses in the same loop - NO, need to find solution 
 # 3. print message to tell the player is guessed the right letter
 # 4. remove two letter options from Gsheet list.
 # 5. add ascii images.
