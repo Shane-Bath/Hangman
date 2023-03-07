@@ -42,7 +42,7 @@ for letter in range(len(selected_word)):
     match = selected_word[letter]
     
     if match == user_input:
-        placeholder[letter] = match
+        placeholder[:match] + selected_word + placeholder[match + 1:]
        
         
        
