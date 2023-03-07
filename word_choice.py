@@ -47,7 +47,7 @@ print(letter_guess)
 # if incorrect add to wrong guess and draw hangman
 wrong_guesses = 0
 
-for letter in random_word:
+for letter in selected_word:
     if letter in letter_guess:
         print(f"{letter_guess}")
     else:
