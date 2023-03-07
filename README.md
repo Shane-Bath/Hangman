@@ -1,3 +1,45 @@
+# Hangman With Ascii art.
+
+A python hangman game with Ascii art.
+
+## Goal
+To create a game of hangman with the following futures.
+* Choice of catagories
+* Level of Difficulties  - number of lives
+* Select a random word save on a Google Spreedsheet
+* Title page and end page made from Ascii art
+* Hangman Ascii character 
+* Store guesses
+* Adding words to the spreadsheet from the game.
+* 
+
+## Design
+I began setting out the design of the game with a handwritten note. Going through basic function and rules of the game. I then used Lucidchart to create a flow chart of the game.
+
+This was a good exercise as It allowed me to break down the game in to smaller parts. With the flow chart and my note, I attempted to write code snippets to build each function of the game out separately, for example select a random word from a list or in this case a google spreadsheet, counting out the number of letters in the word, hiding the word etc. I have attempted this without reference to guides or book but to see what I could do with the knowledge I have at this stage. 
+
+Ascii art add graphics to the game and a 80's esthetic. 
+
+## Testing
+
+## Validator Testing
+
+## Deployment 
+
+## Credits
+
+
+
+
+
+
+
+
+
+
+
+
+
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 Welcome Shane-Bath,
