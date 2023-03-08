@@ -47,17 +47,17 @@ letter_guess = user_input.lower()
 # if right guess, print the letter
 # if incorrect add to wrong guess and draw hangman
 wrong_guesses = 0
-display = []
+# display = []
 def check_letter():
     for letter in selected_word:
         if letter in letter_guess:
         # print(f"You have guessed the correct letter {letter_guess} !")
-            display.append(letter_guess)
-            # print(f"{letter_guess}")
+            # display.append(letter_guess)
+            print(f"{letter_guess}", end= "")
         else:
-            display.append("_")
-            # print("_")
-    return display
+            # display.append("_")
+            print("_", end= "")
+    # return display
 
 
 check_letter()
