@@ -20,6 +20,12 @@ This was a good exercise as It allowed me to break down the game in to smaller p
 
 Ascii art add graphics to the game and a 80's esthetic. 
 
+## pythontutor
+
+
+
+
+
 ## Testing
 
 ## Validator Testing
