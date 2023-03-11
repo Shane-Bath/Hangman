@@ -1,6 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import random
+from acsii import game_over
 from acsii import stage_one
 # from acsii import title
 #  displaying all the acsii graphics? why
@@ -34,28 +35,40 @@ wrong_guesses = 4
 # print(placeholder)
 
 # invite player to guess the letter
-user_input = input("Guess a letter: ")
-# input letter saved in variable in lower case
-letter_guess = user_input.lower()
+# create a function
+# def player_guess():
+#     # create a variable to use outside of function
+#     global letter_guess
+#     user_input = input("Guess a letter: ")
+#     # input letter saved in variable in lower case
+#     letter_guess = user_input.lower()
+
+# player_guess()
+
+# create a list. 
 placeholder = []
-
-
 
 # for letter in range(len(selected_word)):
 for letter in selected_word:
     placeholder += "_"
 print(placeholder)
 
-if letter_guess in selected_word:
-    print("Correct")
-    user_input
-else:
-    wrong_guesses -= 1
-    print(stage_one)
-    print(wrong_guesses)
+while wrong_guesses > 0:
+    user_input = input("Guess a letter: ")
+    letter_guess = user_input.lower()
+    if letter_guess in selected_word:
+        placeholder += letter_guess
+        print("Correct")
+        print(placeholder)
+    elif letter_guess not in selected_word:
+        wrong_guesses -= 1
+        print(wrong_guesses)
+    elif wrong_guesses == 0:
+        print("Game over")
 
-    
 
+# it skipping the if statement check letter on second input, will i place the statement in while loop?
+#
 # for i in range(len(selected_word)):
 #     if letter_guess  == selected_word[i]:
 #         placeholder[i] = letter_guess
@@ -74,7 +87,7 @@ else:
 # how to stop player inputting multiple letter and nums? 
 
 # input letter saved in variable in lower case
-wrong_guesses = 4
+# wrong_guesses = 4
 # numeber guesses allowed 4
 
 # a while loop to continue the game while player has not reached guess limit

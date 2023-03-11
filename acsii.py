@@ -75,14 +75,14 @@ game_over = """
 """
 
 
-print(title)
+# print(title)
 
-print(stage_one)
-print(stage_two)
-print(stage_three)
-print(stage_four)
-print(stage_five)
-print(game_over)
+# print(stage_one)
+# print(stage_two)
+# print(stage_three)
+# print(stage_four)
+# print(stage_five)
+# print(game_over)
 
 #SyntaxError: EOL while scanning string literal
 # https://datagy.io/python-syntax-error-eol-while-scanning-string-literal/
