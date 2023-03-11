@@ -1,6 +1,9 @@
-# Hangman With Ascii art.
+![asceii hangman log](/hangman.png)
 
-A python hangman game with Ascii art.
+
+# Hangman Game With Ascii art.
+
+A python hangman game with Ascii art. This is a simple hangman game written in Python. The objective of the game is to guess a hidden word by suggesting letters. The player can only make a limited number of incorrect guesses before losing the game.
 
 ## Goal
 To create a game of hangman with the following futures.
@@ -19,6 +22,17 @@ I began setting out the design of the game with a handwritten note. Going throug
 This was a good exercise as It allowed me to break down the game in to smaller parts. With the flow chart and my note, I attempted to write code snippets to build each function of the game out separately, for example select a random word from a list or in this case a google spreadsheet, counting out the number of letters in the word, hiding the word etc. I have attempted this without reference to guides or book but to see what I could do with the knowledge I have at this stage. 
 
 Ascii art add graphics to the game and a 80's esthetic. 
+
+## How to play 
+* When you start the game, you will be asked to guess a letter in a the hidden word.
+* The player will input a letter using a keyboard and pressing enter
+* If the letter is in the hidden word, it will be displayed, along with blank spaces representing the other letters in the hidden word.
+* If the letter is not in the hidden word, an ascii image will displayed representing a hangman gallows and figure. 
+* The player will lose a life. There will be a limited number of lives for the player.
+* The player will be asked to guess again.
+* If the player lose all their lives, the game will be over. This will reprsented by a completed hangman image.
+* If the player guess all the letter correctly, the player will win the game.
+* The player can choose to play again typing 'Y' when prompted or quit the game by tying 'N'.
 
 ## pythontutor
 

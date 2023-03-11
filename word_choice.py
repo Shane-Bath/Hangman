@@ -32,9 +32,12 @@ placeholder = []
 for letter in selected_word:
     placeholder += "_"
 print(placeholder)
-for i in range(select_word):
-    if letter == letter_guess[i]:
-        placeholder[i] = letter
+
+for i in range(len(selected_word)):
+    if letter_guess  == selected_word[i]:
+        placeholder[i] = letter_guess
+
+print(placeholder)
 # bug TypeError: 'str' object cannot be interpreted as an integer python tutor
 # TypeError: 'function' object cannot be interpreted as an integer
 # can str be used in a range?
