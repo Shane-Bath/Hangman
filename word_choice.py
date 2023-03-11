@@ -1,6 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import random
+from acsii import stage_one
 # from acsii import title
 #  displaying all the acsii graphics? why
 
@@ -24,6 +25,9 @@ def select_word():
 
 selected_word = select_word()
 print(selected_word)
+wrong_guesses = 4
+# number of guesses allowed 4
+
 
 # print(selected_word)
 # placeholder = "_"*len(selected_word)
@@ -35,6 +39,8 @@ user_input = input("Guess a letter: ")
 letter_guess = user_input.lower()
 placeholder = []
 
+
+
 # for letter in range(len(selected_word)):
 for letter in selected_word:
     placeholder += "_"
@@ -42,8 +48,11 @@ print(placeholder)
 
 if letter_guess in selected_word:
     print("Correct")
+    user_input
 else:
-    print("incorrect")
+    wrong_guesses -= 1
+    print(stage_one)
+    print(wrong_guesses)
 
     
 
