@@ -14,7 +14,6 @@ To create a game of hangman with the following futures.
 * Hangman Ascii character 
 * Store guesses
 * Adding words to the spreadsheet from the game.
-* 
 
 ## Design
 I began setting out the design of the game with a handwritten note. Going through basic function and rules of the game. I then used Lucidchart to create a flow chart of the game.
@@ -34,10 +33,14 @@ Ascii art add graphics to the game and a 80's esthetic.
 * If the player guess all the letter correctly, the player will win the game.
 * The player can choose to play again typing 'Y' when prompted or quit the game by tying 'N'.
 
-## pythontutor
+## Acseii Art
+[Wikapedia](https://en.wikipedia.org/wiki/ASCII_art) state that *ASCII art is a graphic design technique that uses computers for presentation and consists of pictures pieced together from the 95 printable (from a total of 128) characters defined by the ASCII Standard from 1963 and ASCII compliant character sets with proprietary extended characters (beyond the 128 characters of standard 7-bit ASCII). The term is also loosely used to refer to text-based visual art in general. ASCII art can be created with any text editor, and is often used with free-form languages. Most examples of ASCII art require a fixed-width font (non-proportional fonts, as on a traditional typewriter) such as Courier for presentation.*
 
+Used a [Acseii art generator](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20) to produce the Hangman title and end game title. 
 
+For hangman gallows and stick man, I first practiced on Notepad and I completed the final version in the py file itself. 
 
+In order to display the image you have use enclose the *string* with three """ *string* """. I had issue with \ (backslash) as it is a special character in Python, but to you can use *r* which is *raw* python string. The character will be represented as a normal string.
 
 
 ## Testing
@@ -45,49 +48,4 @@ Ascii art add graphics to the game and a 80's esthetic.
 ## Validator Testing
 
 ## Deployment 
-
 ## Credits
-
-
-
-
-
-
-
-
-
-
-
-
-
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-Welcome Shane-Bath,
-
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
-
-## Reminders
-
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
-
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
