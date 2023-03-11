@@ -51,7 +51,13 @@ while wrong_guesses > 0:
         wrong_guesses -= 1
         print(f"You have {wrong_guesses} lives left.")
        
-
+# issues and errors with the above code
+# 1. While loop continues even if all letters guessed
+#    need to stop while loop if all letter guessed
+# 2. space between words - only have one word of find solution
+# 3. I dont want to repeat the placeholder - How to keep it to one line
+# 4. Introduce the acsii images
+# 5. Is even this the appropriate method?
 
 # it skipping the if statement check letter on second input, will i place the statement in while loop?
 #
@@ -59,28 +65,9 @@ while wrong_guesses > 0:
 #     if letter_guess  == selected_word[i]:
 #         placeholder[i] = letter_guess
 
-# print(placeholder)
-# bug TypeError: 'str' object cannot be interpreted as an integer python tutor
-# TypeError: 'function' object cannot be interpreted as an integer
-# can str be used in a range?
 
 # https://understandingdata.com/posts/the-comprehensive-guide-to-google-sheets-with-python/
 
-
-
-
-
-# how to stop player inputting multiple letter and nums? 
-
-# input letter saved in variable in lower case
-# wrong_guesses = 4
-# numeber guesses allowed 4
-
-# a while loop to continue the game while player has not reached guess limit
-# while wrong_guesses > 0:
-#     check_letter()
-#     if wrong_guesses == 0:
-#         print(game_over)
 
 """
 ask player to guess a single, lower case letter
@@ -141,22 +128,5 @@ offer player to restart game or quit
 # 5. add ascii images.  DONE
 # 6. prevent multiple letter inputted (error catching )
 # 6.1 only lower case letter and not number
-# 7 run the game while loop
+# 7 run the game while loop (solved)
 # 8 looping through list, and replacing _ if match is throwing up an error - see bug
-
-
-# if wrong_guesses == 4:
-#     break 
-# print("Game over!") 
-
-
-# selected_word  list(random_word)
-# split = random_word.split() not using 
-
-#NameError: name 'random_word' is not defined. is it outside the function
-
-# print(random_word)
-# print(selected_word)
-# print(split) not using 
-# placeholder = "_"*len(selected_word)
-# print(f"{list(placeholder)}")
