@@ -23,9 +23,16 @@ def select_word():
     return random_word
 
 selected_word = select_word()
+print(selected_word)
+
 # print(selected_word)
 # placeholder = "_"*len(selected_word)
 # print(placeholder)
+
+# invite player to guess the letter
+user_input = input("Guess a letter: ")
+# input letter saved in variable in lower case
+letter_guess = user_input.lower()
 placeholder = []
 
 # for letter in range(len(selected_word)):
@@ -33,11 +40,18 @@ for letter in selected_word:
     placeholder += "_"
 print(placeholder)
 
-for i in range(len(selected_word)):
-    if letter_guess  == selected_word[i]:
-        placeholder[i] = letter_guess
+if letter_guess in selected_word:
+    print("Correct")
+else:
+    print("incorrect")
 
-print(placeholder)
+    
+
+# for i in range(len(selected_word)):
+#     if letter_guess  == selected_word[i]:
+#         placeholder[i] = letter_guess
+
+# print(placeholder)
 # bug TypeError: 'str' object cannot be interpreted as an integer python tutor
 # TypeError: 'function' object cannot be interpreted as an integer
 # can str be used in a range?
@@ -46,10 +60,10 @@ print(placeholder)
 
 
 
-# invite player to guess the letter
-user_input = input("Guess a letter: ")
+
+
 # how to stop player inputting multiple letter and nums? 
-letter_guess = user_input.lower()
+
 # input letter saved in variable in lower case
 wrong_guesses = 4
 # numeber guesses allowed 4

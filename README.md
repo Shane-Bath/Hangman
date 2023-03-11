@@ -40,7 +40,7 @@ Used a [Acseii art generator](https://patorjk.com/software/taag/#p=display&f=Gra
 
 For hangman gallows and stick man, I first practiced on Notepad and I completed the final version in the py file itself. 
 
-In order to display the image you have use enclose the *string* with three """ *string* """. I had issue with \ (backslash) as it is a special character in Python, but to you can use *r* which is *raw* python string. The character will be represented as a normal string.
+In order to display the image you have use enclose the *string* with three quotation marks, for example: """ *string* """. I had an issue with \ (backslash) as it is a special character in Python, but to you can use *r* which is *raw* python string. The character will be represented as a normal string if you place the *r* before 
 
 
 ## Testing
