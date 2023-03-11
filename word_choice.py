@@ -29,22 +29,6 @@ print(selected_word)
 wrong_guesses = 4
 # number of guesses allowed 4
 
-
-# print(selected_word)
-# placeholder = "_"*len(selected_word)
-# print(placeholder)
-
-# invite player to guess the letter
-# create a function
-# def player_guess():
-#     # create a variable to use outside of function
-#     global letter_guess
-#     user_input = input("Guess a letter: ")
-#     # input letter saved in variable in lower case
-#     letter_guess = user_input.lower()
-
-# player_guess()
-
 # create a list. 
 placeholder = []
 
@@ -57,14 +41,16 @@ while wrong_guesses > 0:
     user_input = input("Guess a letter: ")
     letter_guess = user_input.lower()
     if letter_guess in selected_word:
-        placeholder += letter_guess
+        for i in range(len(selected_word)):
+            if selected_word[i] == letter_guess:
+                 placeholder[i] = letter_guess
+        
         print("Correct")
         print(placeholder)
-    elif letter_guess not in selected_word:
+    else:
         wrong_guesses -= 1
-        print(wrong_guesses)
-    elif wrong_guesses == 0:
-        print("Game over")
+        print(f"You have {wrong_guesses} lives left.")
+       
 
 
 # it skipping the if statement check letter on second input, will i place the statement in while loop?
