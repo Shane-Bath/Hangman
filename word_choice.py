@@ -45,6 +45,11 @@ for letter in selected_word:
     placeholder += "_"
 print(placeholder)
 
+reset = 0
+
+# def restart():
+#     if reset == 1:
+#         select_word()
 
 while wrong_guesses > 0:
     user_input = input("\nGuess a letter: ")
@@ -88,8 +93,22 @@ while wrong_guesses > 0:
         print(f"The secert word is {selected_word} !")
         stats -= 1
         print(game_over)
+        reset = input("Press 1 to play again or 2 to quit !")
+        print(reset)
+    if reset == 1:
+        select_word()
+    if reset == 2:
         break
-                 
+
+
+
+
+
+   
+
+
+
+
 # def statistics():
 #     SHEET = GSPREAD_CLIENT.open('Hangman')
 #     stats_track = SHEET.worksheet('stats')
@@ -106,8 +125,6 @@ while wrong_guesses > 0:
 # 2.2 if num input - error go again 
 # 2.3 if upper case - error go again 
 # 2.4 if repeat of letter? Do i penalize
-# 3. How to remove blank for space between two words
-# 3.1 Do I remove more than single words from list??
 # 4 I dont want to repeat the placeholder - How to keep it to one line
 # 5. Is even this the appropriate method?
 # 6. prevent multiple letter inputted (error catching )
@@ -124,6 +141,8 @@ while wrong_guesses > 0:
 # 7 run the game while loop (solved)
 # 8 looping through list, and replacing _ if match is throwing up an error - see bug
 # 9 end game once all the letters have been guessed. SOLVED
+# 3. How to remove blank for space between two words - SOLVED
+# 3.1 Do I remove more than single words from list??
 
 
 
