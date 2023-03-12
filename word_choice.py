@@ -75,39 +75,33 @@ while wrong_guesses > 0:
 
     if wrong_guesses == 4:
         print(stage_one)
-        print(f"Your incorrect guesses {list_of_guess}")
-    if wrong_guesses == 3:
+        
+    elif wrong_guesses == 3:
         print(stage_two)
         print(f"Your incorrect guesses {list_of_guess}")
-    if wrong_guesses == 2:
+    elif wrong_guesses == 2:
         print(stage_three)
         print(f"Your incorrect guesses {list_of_guess} \n")
         print(placeholder)
-    if wrong_guesses == 1:
+    elif wrong_guesses == 1:
         print(stage_four)
         print(f"Your incorrect guesses {list_of_guess} \n")
         print(placeholder)
-    if wrong_guesses == 0:
+    else:
         print(stage_five)
         print(f"Game over you have no guess left\n")
-        print(f"The secert word is {selected_word} !")
+        print(f"The secret word is {selected_word} !")
         stats -= 1
         print(game_over)
-        reset = input("Press 1 to play again or 2 to quit !")
-        print(reset)
-    if reset == 1:
-        select_word()
-    if reset == 2:
         break
 
+         
 
-
-
-
-   
-
-
-
+    #     reset = input("Press 1 to play again or 2 to quit !")
+    #     print(reset)
+    # if reset == 1:
+    #     select_word()
+    # if reset == 2:
 
 # def statistics():
 #     SHEET = GSPREAD_CLIENT.open('Hangman')
@@ -128,6 +122,8 @@ while wrong_guesses > 0:
 # 4 I dont want to repeat the placeholder - How to keep it to one line
 # 5. Is even this the appropriate method?
 # 6. prevent multiple letter inputted (error catching )
+# 7. prevent the repeat of the correct letter 
+# 8. can I use a dictionary or a function to manage wrong_guess?
 
 
 # Solved 
