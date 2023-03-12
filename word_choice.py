@@ -7,6 +7,7 @@ from acsii import stage_two
 from acsii import stage_three
 from acsii import stage_four
 from acsii import stage_five
+from acsii import game_over
 
 # from acsii import title
 #  displaying all the acsii graphics? why
@@ -57,11 +58,25 @@ while wrong_guesses > 0:
     
     else:
         wrong_guesses -= 1
-        print(f"you have {wrong_guesses} left !")
+        print(f"you have {wrong_guesses} guess left !")
     
     if "_" not in placeholder:
         print("You win")
-        break 
+        break
+
+    if wrong_guesses == 4:
+        print(stage_one)
+    if wrong_guesses == 3:
+        print(stage_two)
+    if wrong_guesses == 2:
+        print(stage_three)
+    if wrong_guesses == 1:
+        print(stage_four)
+    if wrong_guesses == 0:
+        print(stage_five)
+        print(f"Game over you have no guess left")
+        print(game_over)
+        break
                  
         
 # if not statement 
@@ -108,17 +123,13 @@ while wrong_guesses > 0:
 
 # issues and errors with the above code
 # 1. While loop continues even if all letters guessed
-#    need to stop while loop if all letter guessed
+#    need to stop while loop if all letter guessed - SOLVED
 # 2. space between words - only have one word of find solution
 # 3. I dont want to repeat the placeholder - How to keep it to one line
-# 4. Introduce the acsii images
+# 4. Introduce the acsii images - SOLVEDish
 # 5. Is even this the appropriate method?
 
-# it skipping the if statement check letter on second input, will i place the statement in while loop?
-#
-# for i in range(len(selected_word)):
-#     if letter_guess  == selected_word[i]:
-#         placeholder[i] = letter_guess
+
 
 
 # https://understandingdata.com/posts/the-comprehensive-guide-to-google-sheets-with-python/
@@ -145,29 +156,6 @@ offer player to restart game or quit
 # https://stackoverflow.com/questions/920645/when-to-use-while-or-for-in-python
 
 
-# print(letter_guess)
-
-# check of the letter is in word, if not record wrong guess
-# Need to keep count of guess, set max number of guess or min number of guess
-# if right guess, print the letter
-# if incorrect add to wrong guess and draw hangman
-
-
-# def check_letter():
-#     for letter in selected_word:
-#         if letter in letter_guess:
-#             print(f"{letter_guess}", end= "")
-#         else:
-#             print("_", end= "")
-# check_letter()
-# I not sure if this is the best solution.   Should I use a list, range() and len()
-
-# # placeholder = []
-
-# for letter in range(len(selected_word)):
-#     placeholder += "_"
-# print(placeholder)
-
 
 
 # issues to resolve tomorrow
@@ -185,4 +173,4 @@ offer player to restart game or quit
 # 6.1 only lower case letter and not number
 # 7 run the game while loop (solved)
 # 8 looping through list, and replacing _ if match is throwing up an error - see bug
-# 9 end game once all the letters have been guessed.
+# 9 end game once all the letters have been guessed. SOLVED
