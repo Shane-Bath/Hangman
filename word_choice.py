@@ -8,6 +8,7 @@ from acsii import stage_three
 from acsii import stage_four
 from acsii import stage_five
 from acsii import game_over
+from acsii import winner
 
 # from acsii import title
 #  displaying all the acsii graphics? why
@@ -31,12 +32,14 @@ def select_word():
     return random_word
 
 selected_word = select_word()
+
 wrong_guesses = 5
 # number of guesses allowed 5
-
+list_of_guess = []
 # create a list. 
 placeholder = []
 
+stats = 0
 # for letter in range(len(selected_word)):
 for letter in selected_word:
     placeholder += "_"
@@ -44,7 +47,7 @@ print(placeholder)
 
 
 while wrong_guesses > 0:
-    user_input = input("Guess a letter: ")
+    user_input = input("\nGuess a letter: ")
     letter_guess = user_input.lower()
     if letter_guess in selected_word:
         for i in range(len(selected_word)):
@@ -52,32 +55,48 @@ while wrong_guesses > 0:
                 placeholder[i] = letter_guess
             
                 
-        print("Correct")
+        print(f"The letter {letter_guess} is Correct!\n")
         print(placeholder)
     
     else:
         wrong_guesses -= 1
-        print(f"you have {wrong_guesses} guess left !")
+        list_of_guess += letter_guess
+        print(f"Incorrect, you have {wrong_guesses} guesses left !")
     
     if "_" not in placeholder:
-        print("You win")
+        print(winner)
+        stats += 1
         break
 
     if wrong_guesses == 4:
         print(stage_one)
+        print(f"Your incorrect guesses {list_of_guess}")
     if wrong_guesses == 3:
         print(stage_two)
+        print(f"Your incorrect guesses {list_of_guess}")
     if wrong_guesses == 2:
         print(stage_three)
+        print(f"Your incorrect guesses {list_of_guess} \n")
+        print(placeholder)
     if wrong_guesses == 1:
         print(stage_four)
+        print(f"Your incorrect guesses {list_of_guess} \n")
+        print(placeholder)
     if wrong_guesses == 0:
         print(stage_five)
-        print(f"Game over you have no guess left")
+        print(f"Game over you have no guess left\n")
+        print(f"The secert word is {selected_word} !")
+        stats -= 1
         print(game_over)
         break
                  
-    
+# def statistics():
+#     SHEET = GSPREAD_CLIENT.open('Hangman')
+#     stats_track = SHEET.worksheet('stats')
+
+
+
+
 # Issues with above code:
 # 1. Can I reduce it.
 # 1.2 if wrong_guess
