@@ -50,13 +50,29 @@ while wrong_guesses > 0:
         for i in range(len(selected_word)):
             if selected_word[i] == letter_guess:
                 placeholder[i] = letter_guess
+            
                 
         print("Correct")
         print(placeholder)
+    
     else:
         wrong_guesses -= 1
+        print(f"you have {wrong_guesses} left !")
+    
+    if "_" not in placeholder:
+        print("You win")
+        break 
                  
         
+# if not statement 
+# # if not wrong guess > 0:
+#     print(stage_five)
+#     break
+
+
+
+
+
 
 # elif wrong_guesses == 3:
 #     print(stage_two)
