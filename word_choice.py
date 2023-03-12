@@ -31,7 +31,6 @@ def select_word():
     return random_word
 
 selected_word = select_word()
-print(selected_word)
 wrong_guesses = 5
 # number of guesses allowed 5
 
@@ -78,56 +77,34 @@ while wrong_guesses > 0:
         print(game_over)
         break
                  
-        
-# if not statement 
-# # if not wrong guess > 0:
-#     print(stage_five)
-#     break
+    
+# Issues with above code:
+# 1. Can I reduce it.
+# 1.2 if wrong_guess
+# 1.3 from acsii import
+# 2 Error log
+# 2.1 input a single letter
+# 2.2 if num input - error go again 
+# 2.3 if upper case - error go again 
+# 2.4 if repeat of letter? Do i penalize
+# 3. How to remove blank for space between two words
+# 3.1 Do I remove more than single words from list??
+# 4 I dont want to repeat the placeholder - How to keep it to one line
+# 5. Is even this the appropriate method?
+# 6. prevent multiple letter inputted (error catching )
 
 
-
-
-
-
-# elif wrong_guesses == 3:
-#     print(stage_two)
-# elif wrong_guesses == 2:
-#     print(stage_three)
-# elif wrong_guesses == 1:
-#     print(stage_four)
-# else:
-#     wrong_guesses == 0
-#     print(stage_five)
-
-
-#  wrong_guesses == 4
-#         print(f"{stage_one}")
-#         wrong_guesses == 3
-#         print(f"{stage_two}")
-#         wrong_guesses == 2
-#         print(f"{stage_three}")
-#         wrong_guesses == 1
-#         print(f"{stage_four}")
-#         wrong_guesses == 0
-#         print(f"{stage_five}")
-# print(f"You have {wrong_guesses} lives left.")
-
-
-# if wrong_guesses == 4:
-#     print(f"{stage_one}")
-#     print(f"You have {wrong_guesses} lives left.")
-
-
-
-
-
-# issues and errors with the above code
+# Solved 
 # 1. While loop continues even if all letters guessed
 #    need to stop while loop if all letter guessed - SOLVED
-# 2. space between words - only have one word of find solution
-# 3. I dont want to repeat the placeholder - How to keep it to one line
 # 4. Introduce the acsii images - SOLVEDish
-# 5. Is even this the appropriate method?
+# 1 . the word prints in a vertical column, how to print in a line .append?? SOLVED
+# 1.1 'str' object has no attribute 'append'. I dont want a list...    SOLVED
+# 3. print message to tell the player is guessed the right letter
+# 5. add ascii images.  DONE
+# 7 run the game while loop (solved)
+# 8 looping through list, and replacing _ if match is throwing up an error - see bug
+# 9 end game once all the letters have been guessed. SOLVED
 
 
 
@@ -150,27 +127,14 @@ offer player to restart game or quit
 """
 
 
-# I have to save the letter to a variable?
-#The for statement iterates through a collection or iterable object or generator function.
-# The while statement simply loops until a condition is False.
-# https://stackoverflow.com/questions/920645/when-to-use-while-or-for-in-python
 
 
 
 
-# issues to resolve tomorrow
 
-# 1 . the word prints in a vertical column, how to print in a line .append?? SOLVED
-# 1.1 'str' object has no attribute 'append'. I dont want a list...    SOLVED
-# 1.2 should i pass a parameters check_letter? selected_word, letter_guess ?
-# 1.3 will the end= "" work?  https://www.toppr.com/guides/python-guide/questions/what-does-end-do-in-python/
-# 1.4 https://www.geeksforgeeks.org/gfact-50-python-end-parameter-in-print/    WORKED
-# 2. Can i record incorrect guesses in the same loop - NO, need to find solution 
-# 3. print message to tell the player is guessed the right letter
-# 4. remove two WORD options from Gsheet list.
-# 5. add ascii images.  DONE
-# 6. prevent multiple letter inputted (error catching )
-# 6.1 only lower case letter and not number
-# 7 run the game while loop (solved)
-# 8 looping through list, and replacing _ if match is throwing up an error - see bug
-# 9 end game once all the letters have been guessed. SOLVED
+
+
+
+
+
+
