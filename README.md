@@ -109,6 +109,7 @@ https://stackoverflow.com/questions/419163/what-does-if-name-main-do
 https://stackoverflow.com/questions/41718538/how-do-i-insert-a-restart-game-option
 https://python-forum.io/thread-12841.htm
 https://www.w3schools.com/python/ref_string_split.asp
+https://stackoverflow.com/questions/10851906/python-3-unboundlocalerror-local-variable-referenced-before-assignment
 
 
 

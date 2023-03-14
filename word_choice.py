@@ -49,41 +49,60 @@ print(placeholder)
 
 reset = 0
 
-def end_game():
-    if wrong_guesses == 0:
-        print(stage_five)
-        print(f"Game over you have no guess left\n")
-        print(f"The secret word is {selected_word} !")
-        stats -= 1
-        print(game_over)
+
 
 # def restart():
 #     if reset == 1:
 #         select_word()
+def game():
+    global wrong_guesses
+    global list_of_guess 
+    while wrong_guesses > 0:
+        user_input = input("\nGuess a letter: ")
+        letter_guess = user_input.lower()
+        if letter_guess in selected_word:
+            for i in range(len(selected_word)):
+                if selected_word[i] == letter_guess:
+                    placeholder[i] = letter_guess
+            print(f"The letter {letter_guess} is Correct!\n")
+            print(placeholder)
+        
+        else:
+            wrong_guesses -= 1
+            list_of_guess += letter_guess
+            print(f"Incorrect, you have {wrong_guesses} guesses left !")
+        
+        if "_" not in placeholder:
+            print(winner)
+            # stats += 1
+            break
+        
+        incorrect_guess()
 
-while wrong_guesses > 0:
-    user_input = input("\nGuess a letter: ")
-    letter_guess = user_input.lower()
-    if letter_guess in selected_word:
-        for i in range(len(selected_word)):
-            if selected_word[i] == letter_guess:
-                placeholder[i] = letter_guess
-        print(f"The letter {letter_guess} is Correct!\n")
-        print(placeholder)
-    
-    else:
-        wrong_guesses -= 1
-        list_of_guess += letter_guess
-        print(f"Incorrect, you have {wrong_guesses} guesses left !")
-    
-    if "_" not in placeholder:
-        print(winner)
-        # stats += 1
+        # if wrong_guesses == 4:
+        #     print(stage_one)
+            
+        # elif wrong_guesses == 3:
+        #     print(stage_two)
+        #     # create a function - statement
+        #     print(f"Your incorrect guesses {list_of_guess}")
+        # elif wrong_guesses == 2:
+        #     print(stage_three)
+        #     print(f"Your incorrect guesses {list_of_guess} \n")
+        #     print(placeholder)
+        # elif wrong_guesses == 1:
+        #     print(stage_four)
+        #     print(f"Your incorrect guesses {list_of_guess} \n")
+        #     print(placeholder)
+        # else:
+        #     end_game()
         break
 
+
+def incorrect_guess():
     if wrong_guesses == 4:
         print(stage_one)
-        
+            
     elif wrong_guesses == 3:
         print(stage_two)
         # create a function - statement
@@ -98,10 +117,21 @@ while wrong_guesses > 0:
         print(placeholder)
     else:
         end_game()
-        break
+        
 
+"""
+Ends game
+"""
+def end_game():
+    if wrong_guesses == 0:
+        print(stage_five)
+        print(f"Game over you have no guess left\n")
+        print(f"The secret word is {selected_word} !")
+        # stats -= 1
+        print(game_over)
+        
 
-
+game()
         
 
 
@@ -175,8 +205,112 @@ player loses
 offer player to restart game or quit
 """
 
+# pythontutor code 14/03/2023
+# selected_word = "dog"
+# selected_word_two = "rat"
+# quit_game = False
 
 
+# # number of guesses allowed 5
+# list_of_guess = []
+# # create a list. 
+# placeholder = []
+# wrong_guesses = 5
+
+# for letter in selected_word:
+#     placeholder += "_"
+# print(placeholder)
+
+
+
+
+# def game_fun():
+#     global wrong_guesses
+#     global list_of_guess
+#     while wrong_guesses > 0:
+#         user_input = input("\nGuess a letter: ")
+#         letter_guess = user_input.lower()
+#         if letter_guess in selected_word:
+#             for i in range(len(selected_word)):
+#                 if selected_word[i] == letter_guess:
+#                     placeholder[i] = letter_guess
+#             print(f"The letter {letter_guess} is Correct!\n")
+#             print(placeholder)
+        
+#         else:
+#             wrong_guesses -= 1
+#             list_of_guess += letter_guess
+#             print(f"Incorrect, you have {wrong_guesses} guesses left !")
+        
+#         if "_" not in placeholder:
+#             print("winner")
+#             # stats += 1
+#             reset_game()
+#         incorrect_guess()
+    
+#         # if wrong_guesses == 4:
+#         #     print("stage_one")
+            
+#         # elif wrong_guesses == 3:
+#         #     print("stage_two")
+#         #     # create a function - statement
+#         #     print(f"Your incorrect guesses {list_of_guess}")
+#         # elif wrong_guesses == 2:
+#         #     print("stage_three")
+#         #     print(f"Your incorrect guesses {list_of_guess} \n")
+#         #     print(placeholder)
+#         # elif wrong_guesses == 1:
+#         #     print("stage_four")
+#         #     print(f"Your incorrect guesses {list_of_guess} \n")
+#         #     print(placeholder)
+#         # else:
+#         #     end_game()
+        
+
+
+# def incorrect_guess():
+#     if wrong_guesses == 4:
+#         print("stage_one")
+            
+#     elif wrong_guesses == 3:
+#         print("stage_two")
+#         # create a function - statement
+#         print(f"Your incorrect guesses {list_of_guess}")
+#     elif wrong_guesses == 2:
+#         print("stage_three")
+#         print(f"Your incorrect guesses {list_of_guess} \n")
+#         print(placeholder)
+#     elif wrong_guesses == 1:
+#         print("stage_four")
+#         print(f"Your incorrect guesses {list_of_guess} \n")
+#         print(placeholder)
+#     else:
+#         end_game()
+
+# def end_game():
+#     if wrong_guesses == 0:
+#         print("stage_five")
+#         print(f"Game over you have no guess left\n")
+#         print(f"The secret word is {selected_word} !")
+#         # stats -= 1
+#         print("game_over")
+#         reset_game()
+#     # else:
+#     #     game_fun()
+
+
+# def reset_game():
+#     global quit_game
+#     option = input("do you want to play again 1 yes 2 no? ")
+#     if option == 1:
+#         game_fun(selected_word_two)
+#     else:
+#         quit_game = True
+
+# game_fun()
+
+# while not quit:
+#     break
 
 
 
