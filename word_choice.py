@@ -1,14 +1,16 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import random
-from acsii import title
-from acsii import stage_one
-from acsii import stage_two
-from acsii import stage_three
-from acsii import stage_four
-from acsii import stage_five
-from acsii import game_over
-from acsii import winner
+from acsii import title, stage_one, stage_two, stage_three, stage_four, stage_five, game_over, winner
+# from acsii import stage_one
+# from acsii import stage_two
+# from acsii import stage_three
+# from acsii import stage_four
+# from acsii import stage_five
+# from acsii import game_over
+# from acsii import winner
+
+# comma septate the import and wrap
 
 # from acsii import title
 #  displaying all the acsii graphics? why
@@ -32,7 +34,7 @@ def select_word():
     return random_word
 
 selected_word = select_word()
-
+print(selected_word)
 wrong_guesses = 5
 # number of guesses allowed 5
 list_of_guess = []
@@ -47,6 +49,14 @@ print(placeholder)
 
 reset = 0
 
+def end_game():
+    if wrong_guesses == 0:
+        print(stage_five)
+        print(f"Game over you have no guess left\n")
+        print(f"The secret word is {selected_word} !")
+        stats -= 1
+        print(game_over)
+
 # def restart():
 #     if reset == 1:
 #         select_word()
@@ -58,8 +68,6 @@ while wrong_guesses > 0:
         for i in range(len(selected_word)):
             if selected_word[i] == letter_guess:
                 placeholder[i] = letter_guess
-            
-                
         print(f"The letter {letter_guess} is Correct!\n")
         print(placeholder)
     
@@ -70,7 +78,7 @@ while wrong_guesses > 0:
     
     if "_" not in placeholder:
         print(winner)
-        stats += 1
+        # stats += 1
         break
 
     if wrong_guesses == 4:
@@ -78,6 +86,7 @@ while wrong_guesses > 0:
         
     elif wrong_guesses == 3:
         print(stage_two)
+        # create a function - statement
         print(f"Your incorrect guesses {list_of_guess}")
     elif wrong_guesses == 2:
         print(stage_three)
@@ -88,13 +97,15 @@ while wrong_guesses > 0:
         print(f"Your incorrect guesses {list_of_guess} \n")
         print(placeholder)
     else:
-        print(stage_five)
-        print(f"Game over you have no guess left\n")
-        print(f"The secret word is {selected_word} !")
-        stats -= 1
-        print(game_over)
+        end_game()
         break
 
+
+
+        
+
+
+# create a function elif elif
          
 
     #     reset = input("Press 1 to play again or 2 to quit !")
@@ -106,6 +117,10 @@ while wrong_guesses > 0:
 # def statistics():
 #     SHEET = GSPREAD_CLIENT.open('Hangman')
 #     stats_track = SHEET.worksheet('stats')
+
+# clear the screen and reproduce. 
+# review the array. 
+# Check elif statement
 
 
 

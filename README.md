@@ -99,7 +99,7 @@ https://stackoverflow.com/questions/10631473/
 https://www.w3schools.com/python/python_while_loops.aspstr-object-does-not-support-item-assignment
 https://stackoverflow.com/questions/66134751/how-do-i-properly-print-ascii-art
 https://stackoverflow.com/questions/10139866/calling-variable-defined-inside-one-function-from-another-function
- https://stackoverflow.com/questions/920645/when-to-use-while-or-for-in-python
+https://stackoverflow.com/questions/920645/when-to-use-while-or-for-in-python
 https://flexiple.com/python/if-not-python/
 https://stackoverflow.com/questions/7511294/how-to-avoid-repetitive-if-statements-in-python-dictionaries
 https://codereview.stackexchange.com/questions/270080/how-possible-it-is-to-shorten-repetitive-if-statements-in-python
@@ -109,4 +109,8 @@ https://stackoverflow.com/questions/419163/what-does-if-name-main-do
 https://stackoverflow.com/questions/41718538/how-do-i-insert-a-restart-game-option
 https://python-forum.io/thread-12841.htm
 https://www.w3schools.com/python/ref_string_split.asp
+
+
+
+![acsii final image](/winner.png)
 
