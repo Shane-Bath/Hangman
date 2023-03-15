@@ -21,39 +21,35 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive"
     ]
 
-# CREDS = Credentials.from_service_account_file('creds.json')
-# SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-# GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+CREDS = Credentials.from_service_account_file('creds.json')
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 
-# def select_word():
-#     SHEET = GSPREAD_CLIENT.open('Hangman')
-#     words = SHEET.worksheet('words')
-#     # data = words.get_all_values()   Do i need this if iam only using data in cols
-#     list_words = words.col_values(1)
-#     random_word = random.choice(list_words).lower()
-#     return random_word
+def select_word():
+    SHEET = GSPREAD_CLIENT.open('Hangman')
+    words = SHEET.worksheet('words')
+    # data = words.get_all_values()   Do i need this if iam only using data in cols
+    list_words = words.col_values(1)
+    random_word = random.choice(list_words).lower()
+    return random_word
 
-# selected_word = select_word()
+selected_word = select_word()
 print(selected_word)
+quit_game = False
 wrong_guesses = 5
 # number of guesses allowed 5
 list_of_guess = []
 # create a list. 
 placeholder = []
 
-stats = 0
-# for letter in range(len(selected_word)):
-# for letter in selected_word:
-#     placeholder += "_"
-# print(placeholder)
+# stats = 0
 
-reset = 0
+for letter in selected_word:
+    placeholder += "_"
+print(placeholder)
 
+# reset = 0
 
-
-# def restart():
-#     if reset == 1:
-#         select_word()
 def game():
     global wrong_guesses
     global list_of_guess 
@@ -66,7 +62,6 @@ def game():
                     placeholder[i] = letter_guess
             print(f"The letter {letter_guess} is Correct!\n")
             print(placeholder)
-        
         else:
             wrong_guesses -= 1
             list_of_guess += letter_guess
@@ -75,9 +70,11 @@ def game():
         if "_" not in placeholder:
             print(winner)
             # stats += 1
-            break
-        
+            reset_game()
         incorrect_guess()
+            # break
+        
+        # incorrect_guess()
 
         # if wrong_guesses == 4:
         #     print(stage_one)
@@ -96,13 +93,12 @@ def game():
         #     print(placeholder)
         # else:
         #     end_game()
-        break
+        # break
 
 
 def incorrect_guess():
     if wrong_guesses == 4:
         print(stage_one)
-            
     elif wrong_guesses == 3:
         print(stage_two)
         # create a function - statement
@@ -129,9 +125,21 @@ def end_game():
         print(f"The secret word is {selected_word} !")
         # stats -= 1
         print(game_over)
+        reset_game()
         
+def reset_game():
+    global quit_game
+    option = input("Do you want to play again? Select 1 for YES OR 2 for NO? ")
+    if option == 1:
+        game(select_word)
+    else:
+        quit_game = True
 
 game()
+
+while not quit:
+    break
+
         
 
 
@@ -248,23 +256,7 @@ offer player to restart game or quit
 #             reset_game()
 #         incorrect_guess()
     
-#         # if wrong_guesses == 4:
-#         #     print("stage_one")
-            
-#         # elif wrong_guesses == 3:
-#         #     print("stage_two")
-#         #     # create a function - statement
-#         #     print(f"Your incorrect guesses {list_of_guess}")
-#         # elif wrong_guesses == 2:
-#         #     print("stage_three")
-#         #     print(f"Your incorrect guesses {list_of_guess} \n")
-#         #     print(placeholder)
-#         # elif wrong_guesses == 1:
-#         #     print("stage_four")
-#         #     print(f"Your incorrect guesses {list_of_guess} \n")
-#         #     print(placeholder)
-#         # else:
-#         #     end_game()
+#   
         
 
 
