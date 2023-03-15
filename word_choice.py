@@ -21,19 +21,19 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive"
     ]
 
-CREDS = Credentials.from_service_account_file('creds.json')
-SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+# CREDS = Credentials.from_service_account_file('creds.json')
+# SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+# GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 
-def select_word():
-    SHEET = GSPREAD_CLIENT.open('Hangman')
-    words = SHEET.worksheet('words')
-    # data = words.get_all_values()   Do i need this if iam only using data in cols
-    list_words = words.col_values(1)
-    random_word = random.choice(list_words).lower()
-    return random_word
+# def select_word():
+#     SHEET = GSPREAD_CLIENT.open('Hangman')
+#     words = SHEET.worksheet('words')
+#     # data = words.get_all_values()   Do i need this if iam only using data in cols
+#     list_words = words.col_values(1)
+#     random_word = random.choice(list_words).lower()
+#     return random_word
 
-selected_word = select_word()
+# selected_word = select_word()
 print(selected_word)
 wrong_guesses = 5
 # number of guesses allowed 5
@@ -43,9 +43,9 @@ placeholder = []
 
 stats = 0
 # for letter in range(len(selected_word)):
-for letter in selected_word:
-    placeholder += "_"
-print(placeholder)
+# for letter in selected_word:
+#     placeholder += "_"
+# print(placeholder)
 
 reset = 0
 
