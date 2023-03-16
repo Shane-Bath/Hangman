@@ -1,6 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import random
+
 from acsii import title, stage_one, stage_two, stage_three, stage_four, stage_five, game_over, winner
 # from acsii import stage_one
 # from acsii import stage_two
@@ -72,29 +73,6 @@ def game():
             # stats += 1
             reset_game()
         incorrect_guess()
-            # break
-        
-        # incorrect_guess()
-
-        # if wrong_guesses == 4:
-        #     print(stage_one)
-            
-        # elif wrong_guesses == 3:
-        #     print(stage_two)
-        #     # create a function - statement
-        #     print(f"Your incorrect guesses {list_of_guess}")
-        # elif wrong_guesses == 2:
-        #     print(stage_three)
-        #     print(f"Your incorrect guesses {list_of_guess} \n")
-        #     print(placeholder)
-        # elif wrong_guesses == 1:
-        #     print(stage_four)
-        #     print(f"Your incorrect guesses {list_of_guess} \n")
-        #     print(placeholder)
-        # else:
-        #     end_game()
-        # break
-
 
 def incorrect_guess():
     if wrong_guesses == 4:
@@ -130,17 +108,16 @@ def end_game():
 def reset_game():
     global quit_game
     option = input("Do you want to play again? Select 1 for YES OR 2 for NO? ")
-    if option == 1:
-        game(select_word)
+    if option == '1':
+        select_word()
     else:
-        quit_game = True
+        return quit_game == True
 
-game()
+# how to flip quit_game to true.
 
-while not quit:
-    break
-
-        
+while not quit_game:
+    game()
+    reset_game()        
 
 
 # create a function elif elif

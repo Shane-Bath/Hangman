@@ -77,7 +77,7 @@ The following is a list resource i referred to.
 * W3school
 * Google Docs (Google sheets)
 * Stackover flow
-* Patorjk.com
+* [Patorjk.com](https://patorjk.com/software/taag/#p=display&f=Standard&t=Hangman)
 * FreeCodeCamp.org
 * Code Institute 
 * Programming with Mosh - https://www.youtube.com/@programmingwithmosh
@@ -110,7 +110,7 @@ https://stackoverflow.com/questions/41718538/how-do-i-insert-a-restart-game-opti
 https://python-forum.io/thread-12841.htm
 https://www.w3schools.com/python/ref_string_split.asp
 https://stackoverflow.com/questions/10851906/python-3-unboundlocalerror-local-variable-referenced-before-assignment
-
+https://stackoverflow.com/questions/11178061/print-list-without-brackets-in-a-single-row
 
 
 ![acsii final image](/winner.png)
