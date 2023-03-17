@@ -13,16 +13,33 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 
-print(title)
-quit_game = False
+game_over = False
 list_of_guess = []
+
+
+print(title)
+
+def reset_game():
+    global wrong_guesses
+    global list_of_guess
+    global game_over
+    option = input("Do you want to play again? Select 1 for YES OR 2 for NO? ")
+    print(option)
+    if option == '1':
+        wrong_guesses = 5
+        list_of_guess = []
+        game()
+    else:
+        game_over = True
+    # while option == '2':
+    #     break
+        
 
 wrong_guesses = 5
 
 def game():
     global wrong_guesses
     global list_of_guess
-    global quit_game
     placeholder = []
     SHEET = GSPREAD_CLIENT.open('Hangman')
     words = SHEET.worksheet('words')
@@ -30,9 +47,10 @@ def game():
     list_words = words.col_values(1)
     random_word = random.choice(list_words).lower()
     selected_word = random_word
+    print(selected_word)
 
     for letter in selected_word:
-        placeholder += " _ "
+        placeholder += "_"
     print(''.join(placeholder))
 
     while wrong_guesses > 0:
@@ -49,28 +67,36 @@ def game():
             list_of_guess += letter_guess
             print(f"Incorrect, you have {wrong_guesses} guesses left !")
 
-            if "_" not in placeholder:
-                print(winner)
-            
-            if wrong_guesses == 4:
-                print(stage_one)
-            elif wrong_guesses == 3:
-                print(stage_two)
-        # create a function - statement
-                print(f"Your incorrect guesses {list_of_guess}")
-            elif wrong_guesses == 2:
-                print(stage_three)
-                print(f"Your incorrect guesses {list_of_guess} \n")
-                print(''.join(placeholder))
-            elif wrong_guesses == 1:
-                print(stage_four)
-                print(f"Your incorrect guesses {list_of_guess} \n")
-                print(''.join(placeholder))
-            if wrong_guesses == 0:
-                print(stage_five)
-                print(f"Game over you have no guess left\n")
-                print(f"The secret word is {selected_word} !")
-                break
+        if "_" not in placeholder:
+            print(winner)
+            reset_game()
+
+        if game_over == True:
+            break
+        
+        if wrong_guesses == 4:
+            print(stage_one)
+        elif wrong_guesses == 3:
+            print(stage_two)
+    # create a function - statement
+            print(f"Your incorrect guesses {list_of_guess}")
+        elif wrong_guesses == 2:
+            print(stage_three)
+            print(f"Your incorrect guesses {list_of_guess} \n")
+            print(''.join(placeholder))
+        elif wrong_guesses == 1:
+            print(stage_four)
+            print(f"Your incorrect guesses {list_of_guess} \n")
+            print(''.join(placeholder))
+        if wrong_guesses == 0:
+            print(wrong_guesses)
+            print(stage_five)
+            print(f"Game over you have no guess left\n")
+            print(f"The secret word is {selected_word} !")
+            reset_game()
+        
+                
 
 
 game()
+

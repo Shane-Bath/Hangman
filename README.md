@@ -46,6 +46,13 @@ In order to display the image you have use enclose the *string* with three quota
 ## Testing
 I have found the Pythontutor very helpful to test small of the code, a for loop etc. I am able to see at what point in the code, error is produced. I research the to come up with the solution or make a few changes run the code again. 
 
+Example of issue:
+**Restarting the game created a number of issue for me. Originally the game was divided up into a number of functions, and I attempted to used Boolean False / True to change the state of game. This proved difficult and produced bugs. Becasue of time and probably lack of expericane / understanding, I restructed the game into one fuction and built a seperate fuction to reset the game. This function would either call the game() or stop the game.**
+
+Using Pythontutor it appeared the issue was the resettnig the variable wrong_guess which was reduced from 5 to 0 during the game. The variable is in the'global frame' and even though the variable has been assigned 5 in the reset_game() function, it does change the "global" variable. To resolve this i assigned the **global** to the wrong_guesses within the reset_game() function. 
+
+Without being able to step in each line of code and visually seening the global veriable was not being reset to 5, it would hae been difficult for me to pin point the issue. 
+
 I connect the varies part the of code, and run it in the workspace terminal. Again going through each section of the code, trying to work out why the code is not executing as expected. It could be a simple indentation error or spelling mistake etc. Fix the issues and try again.  I would also redo code and experiment with snippets of code from sources like stackover flow , WC3schools or python blogs, but a lot the code ended up on the cutting floor. 
 
 If the code did not work as expected, I would comment it out and try something else. As the project progressed, I would come back to the line, make changes based growing understanding of what I was doing, and end up using it. 

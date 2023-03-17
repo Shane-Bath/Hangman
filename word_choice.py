@@ -94,30 +94,27 @@ def incorrect_guess():
         
 
 """
-Ends game
+End game
 """
 def end_game():
-    if wrong_guesses == 0:
-        print(stage_five)
-        print(f"Game over you have no guess left\n")
-        print(f"The secret word is {selected_word} !")
-        # stats -= 1
-        print(game_over)
-        reset_game()
+    # if wrong_guesses == 0:
+    print(stage_five)
+    print(f"Game over you have no guess left\n")
+    print(f"The secret word is {selected_word} !")
+    # stats -= 1
+    print(game_over)
+    reset_game()
         
 def reset_game():
     global quit_game
     option = input("Do you want to play again? Select 1 for YES OR 2 for NO? ")
+    print(option)
     if option == '1':
         select_word()
-    else:
-        return quit_game == True
+    
+    return 
 
 # how to flip quit_game to true.
-
-while not quit_game:
-    game()
-    reset_game()        
 
 
 # create a function elif elif
