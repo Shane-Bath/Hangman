@@ -17,7 +17,7 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 
 game_over = False
 list_of_guess = []
-print(list_of_guess)
+# print(list_of_guess)
 wrong_guesses = 5
 
 print(title)
@@ -45,7 +45,7 @@ def game():
     list_words = words.col_values(1)
     random_word = random.choice(list_words).lower()
     selected_word = random_word
-    print(selected_word)
+    # print(selected_word)
     print("The secert word is ?")
 
     for letter in selected_word:
@@ -76,7 +76,7 @@ def game():
             for i in range(len(selected_word)):
                 if selected_word[i] == letter_guess:
                     placeholder[i] = letter_guess
-            print(f"The letter {letter_guess} is Correct!\n")
+            print(f"{letter_guess} is Correct!\n")
             print("The secert word is ?")
             print(''.join(placeholder))
             print("")
@@ -85,7 +85,7 @@ def game():
         else:
             wrong_guesses -= 1
             print(f"Incorrect, you have {wrong_guesses} guesses left !\n")
-            print(f"List of your incorrect guesses: {list_of_guess}\n")
+            print(f"List of your guesses: {list_of_guess}\n")
             print("The secert word is ?")
             print(''.join(placeholder))
 

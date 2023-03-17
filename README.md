@@ -57,7 +57,7 @@ I connect the varies part the of code, and run it in the workspace terminal. Aga
 
 If the code did not work as expected, I would comment it out and try something else. As the project progressed, I would come back to the line, make changes based growing understanding of what I was doing, and end up using it. 
 
-Finally I asked my daughter and wife to play the game, while they played I note any changes I wanted to make. Which were a few as they saw the game differently to me. For example reprinting the word line later in game, or adding a list of incorrect letter. It was a useful excise.
+Finally I asked my daughter and wife to play the game, while they played I note any changes I wanted to make. Which were a few as they saw the game differently to me. For example reprinting the word line later in game, or adding a list of incorrect letter. It was a useful exercise.
 
 ## Validator Testing
 
@@ -80,10 +80,10 @@ Once the deployment is complete, the project will be accessible via the mock ter
 ## Credit
 Thanks to Simen Dehlin for his guidance. 
 
-The following is a list resource i referred to. 
+The following is a list resource I referred to. 
 * W3school
 * Google Docs (Google sheets)
-* Stackover flow
+* Stackoverflow
 * [Patorjk.com](https://patorjk.com/software/taag/#p=display&f=Standard&t=Hangman)
 * FreeCodeCamp.org
 * Code Institute 
@@ -120,6 +120,7 @@ https://stackoverflow.com/questions/10851906/python-3-unboundlocalerror-local-va
 https://stackoverflow.com/questions/11178061/print-list-without-brackets-in-a-single-row
 https://www.geeksforgeeks.org/clear-screen-python/
 https://stackoverflow.com/questions/8761778/limiting-python-input-strings-to-certain-characters-and-lengths
+https://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response?noredirect=1&lq=1
 
 
 ![acsii final image](/winner.png)
