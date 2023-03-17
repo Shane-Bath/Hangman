@@ -35,8 +35,6 @@ def reset_game():
         game_over = True
 
 
-
-
 def game():
     global wrong_guesses
     global list_of_guess
@@ -86,7 +84,6 @@ def game():
             print(f"{list_of_guess}\n")
         else:
             wrong_guesses -= 1
-            # list_of_guess += letter_guess
             print(f"Incorrect, you have {wrong_guesses} guesses left !\n")
             print(f"List of your incorrect guesses: {list_of_guess}\n")
             print("The secert word is ?")
@@ -113,7 +110,3 @@ def game():
 
 game()
 
-# to do list
-# 1 check if your have guessed the word already 
-# restrict input to one letter and str
-# 
