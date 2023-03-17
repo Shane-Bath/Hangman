@@ -118,6 +118,8 @@ https://python-forum.io/thread-12841.htm
 https://www.w3schools.com/python/ref_string_split.asp
 https://stackoverflow.com/questions/10851906/python-3-unboundlocalerror-local-variable-referenced-before-assignment
 https://stackoverflow.com/questions/11178061/print-list-without-brackets-in-a-single-row
+https://www.geeksforgeeks.org/clear-screen-python/
+https://stackoverflow.com/questions/8761778/limiting-python-input-strings-to-certain-characters-and-lengths
 
 
 ![acsii final image](/winner.png)

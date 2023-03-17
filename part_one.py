@@ -15,33 +15,22 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 
 game_over = False
 list_of_guess = []
-
+wrong_guesses = 5
 
 print(title)
-
-# def clear():
-#     if name == 'nt':
-#         _ = system('cls')
-#     else:
-#         _ = system('clear')
 
 def reset_game():
     global wrong_guesses
     global list_of_guess
     global game_over
     option = input("Do you want to play again? Select 1 for YES OR 2 for NO? ")
-    print(option)
     if option == '1':
         wrong_guesses = 5
         list_of_guess = []
         game()
     else:
         game_over = True
-    # while option == '2':
-    #     break
-        
 
-wrong_guesses = 5
 
 def game():
     global wrong_guesses
@@ -49,11 +38,11 @@ def game():
     placeholder = []
     SHEET = GSPREAD_CLIENT.open('Hangman')
     words = SHEET.worksheet('words')
-    # data = words.get_all_values()   Do i need this if iam only using data in cols
     list_words = words.col_values(1)
     random_word = random.choice(list_words).lower()
     selected_word = random_word
     print(selected_word)
+    print("The secert word is ?")
 
     for letter in selected_word:
         placeholder += "_"
@@ -61,18 +50,30 @@ def game():
 
     while wrong_guesses > 0:
         user_input = input("\nGuess a letter: ")
+        
+        if len(user_input) > 1:
+            print('Pick one letter only')
+            user_input = input("\nGuess a letter: ")
         os.system('clear')
         letter_guess = user_input.lower()
+     
         if letter_guess in selected_word:
             for i in range(len(selected_word)):
                 if selected_word[i] == letter_guess:
                     placeholder[i] = letter_guess
             print(f"The letter {letter_guess} is Correct!\n")
+            print("The secert word is ?")
             print(''.join(placeholder))
+            print("")
+            print("List of your incorrect guesses:")
+            print(f"{list_of_guess}\n")
         else:
             wrong_guesses -= 1
             list_of_guess += letter_guess
-            print(f"Incorrect, you have {wrong_guesses} guesses left !")
+            print(f"Incorrect, you have {wrong_guesses} guesses left !\n")
+            print(f"List of your incorrect guesses: {list_of_guess}\n")
+            print("The secert word is ?")
+            print(''.join(placeholder))
 
         if "_" not in placeholder:
             print(winner)
@@ -83,23 +84,24 @@ def game():
         
         if wrong_guesses == 4:
             print(stage_one)
+            
+            
         elif wrong_guesses == 3:
             print(stage_two)
-    # create a function - statement
-            print(f"Your incorrect guesses {list_of_guess}")
+            
+            
+            
         elif wrong_guesses == 2:
             print(stage_three)
-            print(f"Your incorrect guesses {list_of_guess} \n")
-            print(''.join(placeholder))
+            
         elif wrong_guesses == 1:
             print(stage_four)
-            print(f"Your incorrect guesses {list_of_guess} \n")
-            print(''.join(placeholder))
+          
         if wrong_guesses == 0:
             print(wrong_guesses)
             print(stage_five)
             print(f"Game over you have no guess left\n")
-            print(f"The secret word is {selected_word} !")
+            print(f"The secret word is {selected_word} ! \n")
             reset_game()
         
                 
@@ -107,3 +109,7 @@ def game():
 
 game()
 
+# to do list
+# 1 check if your have guessed the word already 
+# restrict input to one letter and str
+# 
