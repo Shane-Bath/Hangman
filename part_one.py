@@ -2,7 +2,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 import random
 from acsii import title, stage_one, stage_two, stage_three, stage_four, stage_five, game_over, winner
-
+import os
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -18,6 +18,12 @@ list_of_guess = []
 
 
 print(title)
+
+# def clear():
+#     if name == 'nt':
+#         _ = system('cls')
+#     else:
+#         _ = system('clear')
 
 def reset_game():
     global wrong_guesses
@@ -55,6 +61,7 @@ def game():
 
     while wrong_guesses > 0:
         user_input = input("\nGuess a letter: ")
+        os.system('clear')
         letter_guess = user_input.lower()
         if letter_guess in selected_word:
             for i in range(len(selected_word)):
