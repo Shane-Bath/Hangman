@@ -17,6 +17,7 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 
 game_over = False
 list_of_guess = []
+print(list_of_guess)
 wrong_guesses = 5
 
 print(title)
@@ -34,9 +35,12 @@ def reset_game():
         game_over = True
 
 
+
+
 def game():
     global wrong_guesses
     global list_of_guess
+    global game_over 
     placeholder = []
     SHEET = GSPREAD_CLIENT.open('Hangman')
     words = SHEET.worksheet('words')
@@ -51,6 +55,9 @@ def game():
     print(''.join(placeholder))
 
     while wrong_guesses > 0:
+        if game_over == True:
+            os.system('clear')
+            break
         user_input = input("\nGuess a letter: ")
         if not re.match("^[a-z]*$", user_input):
             print("Error, only letter from a-z allowed")
@@ -58,7 +65,13 @@ def game():
         elif len(user_input) > 1:
             print('Pick one letter only')
             user_input = input("\nGuess a letter: ")
+        elif user_input in list_of_guess:
+            print("guess again")
+            user_input = input("\nGuess a letter: ")
+
+        list_of_guess += user_input
         os.system('clear')
+        
         letter_guess = user_input.lower()
      
         if letter_guess in selected_word:
@@ -69,11 +82,11 @@ def game():
             print("The secert word is ?")
             print(''.join(placeholder))
             print("")
-            print("List of your incorrect guesses:")
+            print("List of your guesses:")
             print(f"{list_of_guess}\n")
         else:
             wrong_guesses -= 1
-            list_of_guess += letter_guess
+            # list_of_guess += letter_guess
             print(f"Incorrect, you have {wrong_guesses} guesses left !\n")
             print(f"List of your incorrect guesses: {list_of_guess}\n")
             print("The secert word is ?")
@@ -83,33 +96,20 @@ def game():
             print(winner)
             reset_game()
 
-        if game_over == True:
-            break
-        
         if wrong_guesses == 4:
-            print(stage_one)
-            
-            
+            print(stage_one)     
         elif wrong_guesses == 3:
-            print(stage_two)
-            
-            
-            
+            print(stage_two)  
         elif wrong_guesses == 2:
-            print(stage_three)
-            
+            print(stage_three)   
         elif wrong_guesses == 1:
             print(stage_four)
-          
-        if wrong_guesses == 0:
+        elif wrong_guesses == 0:
             print(wrong_guesses)
             print(stage_five)
             print(f"Game over you have no guess left\n")
             print(f"The secret word is {selected_word} ! \n")
             reset_game()
-        
-                
-
 
 game()
 
