@@ -3,6 +3,8 @@ from google.oauth2.service_account import Credentials
 import random
 from acsii import title, stage_one, stage_two, stage_three, stage_four, stage_five, game_over, winner
 import os
+import re
+
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -50,8 +52,10 @@ def game():
 
     while wrong_guesses > 0:
         user_input = input("\nGuess a letter: ")
-        
-        if len(user_input) > 1:
+        if not re.match("^[a-z]*$", user_input):
+            print("Error, only letter from a-z allowed")
+            user_input = input("\nGuess a letter: ")
+        elif len(user_input) > 1:
             print('Pick one letter only')
             user_input = input("\nGuess a letter: ")
         os.system('clear')
