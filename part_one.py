@@ -26,9 +26,6 @@ def clear_screen():
     """
     os.system('cls' if os.name == 'nt' else 'clear')
 
-
-# clear_screen()
-
 def reset_game():
     global wrong_guesses
     global list_of_guess
@@ -39,30 +36,30 @@ def reset_game():
         wrong_guesses = 5
         list_of_guess = []
         clear_screen()
-        # os.system('clear')
         print(title)
         game()
     
     else:
+        wrong_guesses = -1
         game_over = True
 
 
 def game():
-    """
-    A word is choosen randomly from a list of words in Google Sheet and saved to a
-    veriable selected_word. The player guesess a letter. 
-    """
     global wrong_guesses
     global list_of_guess
     global game_over 
+    while game_over == True:
+        
+        break
+
     placeholder = []
     SHEET = GSPREAD_CLIENT.open('Hangman')
     words = SHEET.worksheet('words')
     list_words = words.col_values(1)
     random_word = random.choice(list_words).lower()
     selected_word = random_word
-  
-    print("The secert word is ?")
+    
+    print("The secret word is ?")
 
     for letter in selected_word:
         placeholder += "_"
@@ -70,10 +67,6 @@ def game():
     print("\n")
 
     while wrong_guesses > 0:
-        if game_over == True:
-            clear_screen()
-            # os.system('clear')
-            break
         user_input = input("Guess a letter:\n")
         if not re.match("^[a-z]*$", user_input):
             print("Error, only letter from a-z allowed")
@@ -86,7 +79,7 @@ def game():
             user_input = input("Guess a letter:\n")
         
         list_of_guess += user_input
-        # os.system('clear')
+        
         clear_screen()
         
         letter_guess = user_input.lower()
