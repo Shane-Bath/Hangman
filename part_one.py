@@ -20,11 +20,13 @@ wrong_guesses = 5
 
 print(title)
 
+
 def clear_screen():
     """
     To clear screen after each turn, on both windowOS and MacOs
     """
     os.system('cls' if os.name == 'nt' else 'clear')
+
 
 def reset_game():
     """
@@ -57,7 +59,6 @@ def game():
     global list_of_guess
     global game_over 
     while game_over == True:
-        
         break
 
     placeholder = []
@@ -66,7 +67,6 @@ def game():
     list_words = words.col_values(1)
     random_word = random.choice(list_words).lower()
     selected_word = random_word
-    
     print("The secret word is ?")
 
     for letter in selected_word:
@@ -85,13 +85,9 @@ def game():
         elif user_input in list_of_guess:
             print("You have already used this letter, guess again")
             user_input = input("Guess a letter:\n")
-        
         list_of_guess += user_input
-        
         clear_screen()
-        
         letter_guess = user_input.lower()
-     
         if letter_guess in selected_word:
             for i in range(len(selected_word)):
                 if selected_word[i] == letter_guess:
