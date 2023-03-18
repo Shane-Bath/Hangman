@@ -63,7 +63,8 @@ def game():
 
     for letter in selected_word:
         placeholder += "_"
-    print(''.join(placeholder))
+    # print(''.join(placeholder))
+    print(placeholder)
     print("\n")
 
     while wrong_guesses > 0:
@@ -90,7 +91,8 @@ def game():
                     placeholder[i] = letter_guess
             print(f"{letter_guess} is Correct!\n")
             print("The secert word is ?")
-            print(''.join(placeholder))
+            # print(''.join(placeholder))
+            print(placeholder)
             print("")
             print("List of your guesses:")
             print(f"{list_of_guess}\n")
@@ -99,7 +101,8 @@ def game():
             print(f"Incorrect, you have {wrong_guesses} guesses left !\n")
             print(f"List of your guesses: {list_of_guess}\n")
             print("The secert word is ?")
-            print(''.join(placeholder))
+            # print(''.join(placeholder))
+            print(placeholder)
 
         if "_" not in placeholder:
             print(winner)
