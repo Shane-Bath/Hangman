@@ -1,4 +1,4 @@
-![asceii hangman log](/hangman.png)
+![asceii hangman log](/images//hangman.png)
 
 
 # Hangman Game With Ascii art.
@@ -18,7 +18,7 @@ To create a game of hangman with the following futures.
 ## Design
 I began setting out the design of the game with a handwritten note. Going through basic function and rules of the game. I then used Lucidchart to create a flow chart of the game.
 
-![Lucidchart](/flowchart.png)
+![Lucidchart](/images/flowchart.png)
 
 This was a good exercise as It allowed me to break down the game in to smaller parts. With the flow chart and my note, I attempted to write code snippets to build each function of the game out separately, for example select a random word from a list or in this case a google spreadsheet, counting out the number of letters in the word, hiding the word etc.
 
@@ -47,7 +47,7 @@ In order to display the image, you have use enclose the *string* with three quot
 ## Testing
 I have found the Pythontutor very helpful to test and step into the code. Being able to see at what point in the code, an error is produced and the order that the code is read by the terminal helped me to better understand what I was attempting to do. 
 
-![pythontutor](/pythontutor.png)
+![pythontutor](/images/pythontutor.png)
 
 It allowed me to make a changes and I was better able to understand how the changes impacted the code. Often the error could be as simple as an incorrect indentation (often), or a syntax error etc. If the solution to the problem was not obvious to me,  I could  focus my research on the problem and try to come up with a solution.
 
@@ -137,5 +137,5 @@ https://stackoverflow.com/questions/8761778/limiting-python-input-strings-to-cer
 https://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response?noredirect=1&lq=1
 https://stackoverflow.com/questions/2084508/clear-terminal-in-python
 
-![acsii final image](/winner.png)
+![acsii final image](/images/winner.png)
 

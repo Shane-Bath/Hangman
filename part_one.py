@@ -27,6 +27,9 @@ def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def reset_game():
+    """
+    To allow the player to reset and play again.
+    """
     global wrong_guesses
     global list_of_guess
     global game_over
@@ -45,6 +48,11 @@ def reset_game():
 
 
 def game():
+    """
+    Runs the game, provides a random word from the Google sheet. Displays the word with
+    a placholder. Invites a player to guess a letter. Validate the letter and checks it against
+    the word. Keeps count of live and displays the hang man.
+    """
     global wrong_guesses
     global list_of_guess
     global game_over 
@@ -63,7 +71,6 @@ def game():
 
     for letter in selected_word:
         placeholder += "_"
-    # print(''.join(placeholder))
     print(placeholder)
     print("\n")
 
@@ -91,7 +98,6 @@ def game():
                     placeholder[i] = letter_guess
             print(f"{letter_guess} is Correct!\n")
             print("The secert word is ?")
-            # print(''.join(placeholder))
             print(placeholder)
             print("")
             print("List of your guesses:")
@@ -101,7 +107,6 @@ def game():
             print(f"Incorrect, you have {wrong_guesses} guesses left !\n")
             print(f"List of your guesses: {list_of_guess}\n")
             print("The secert word is ?")
-            # print(''.join(placeholder))
             print(placeholder)
 
         if "_" not in placeholder:
