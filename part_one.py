@@ -26,10 +26,11 @@ def reset_game():
     global wrong_guesses
     global list_of_guess
     global game_over
-    option = input("Do you want to play again? Select 1 for YES OR 2 for NO? ")
+    option = input("Do you want to play again? Select 1 for YES OR 2 for NO?\n")
     if option == '1':
         wrong_guesses = 5
         list_of_guess = []
+        print(title)
         game()
     else:
         game_over = True
@@ -56,16 +57,16 @@ def game():
         if game_over == True:
             os.system('clear')
             break
-        user_input = input("\nGuess a letter: ")
+        user_input = input("Guess a letter:\n")
         if not re.match("^[a-z]*$", user_input):
             print("Error, only letter from a-z allowed")
-            user_input = input("\nGuess a letter: ")
+            user_input = input("Guess a letter:\n")
         elif len(user_input) > 1:
             print('Pick one letter only')
-            user_input = input("\nGuess a letter: ")
+            user_input = input("Guess a letter:\n")
         elif user_input in list_of_guess:
             print("guess again")
-            user_input = input("\nGuess a letter: ")
+            user_input = input("Guess a letter:\n")
         
         list_of_guess += user_input
         os.system('clear')
