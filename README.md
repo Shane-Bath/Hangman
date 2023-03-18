@@ -62,7 +62,7 @@ I have no doubt that I have come up with a convoluted code to produce what the g
 Finally I asked my daughter and wife to play the game, while they played I noted any changes I wanted to make. Which were a few as they saw the game differently to me. It was a useful exercise.
 
 ## Validator Testing
-I could not find any official python validator.
+[Pep8](https://pep8ci.herokuapp.com/) did not return an significant errors
 
 ## Bugs
 I had originally coded  the game into different functions and modules. Unfortunately, this created a number of issues and introduced bugs into the game. Due to time pressure and in order to get a working code, I abandoned the multiple modules approach, and I placed the body of the main code is one main module and fewer functions. This resolved most of the issues.
