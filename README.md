@@ -55,7 +55,7 @@ I would take and connect the varies part the of code, and run it in the workspac
 
 If the code did not work as expected, I would comment it out and try something else. As the project progressed, I would come back to the line, make changes based on my growing understanding of what I was doing, and sometimes end up using the line of code as I implemented the concept correctly.
 
-Restarting the game proved to be an issue I unfortunately spent a significant amount of time trying to resolve in gitpod, unsuccessfully. I attempted a number of fixes and solutions, going down a few blind alleys. I designed the code to checked the variable wrong_guess to see at what stage of the player was in the game. This variable determined the beginning and end of the game. Even though I reset wrong_guess back to the original state in the function that controlled the restart of the game, the terminal would not recognize this, and it would continue to run the code in the end state. Eventually using Pythontutor I began to under the'global frame' and my reset function was not resetting the wrong_guess because it was out of the global frame. The variable had been assigned 5 in the reset_game() function, but it did change the "global" variable. To resolve this I assigned the **global** keyword to the wrong_guesses, which allowed for the variable to updated. 
+As an example, restarting the game proved to be an issue I unfortunately spent a significant amount of time trying to resolve in gitpod, unsuccessfully. I attempted a number of fixes and solutions, going down a few blind alleys. I designed the code to checked the variable wrong_guess to see at what stage of the player was in the game. This variable determined the beginning and end of the game. Even though I reset wrong_guess back to the original state in the function that controlled the restart of the game, the terminal would not recognize this, and it would continue to run the code in the end state. Eventually using Pythontutor I began to under the'global frame' and that my reset function was not resetting the wrong_guess because it was out of the global frame. The variable had been assigned 5 in the reset_game() function, but it did not change the "global" variable. To resolve this I assigned the **global** keyword to the wrong_guesses, which allowed for the variable to updated. 
 
 Without being able to step in each line of code and understanding that it was not being reset to 5, it would hae been difficult for me to pin point the issue. 
 
@@ -64,6 +64,7 @@ I have no doubt that come up with a convoluted code to produce what the game act
 Finally I asked my daughter and wife to play the game, while they played I note any changes I wanted to make. Which were a few as they saw the game differently to me. For example reprinting the word line later in game, or adding a list of incorrect letter. It was a useful exercise.
 
 ## Validator Testing
+I could not find any official python validator.
 
 ## Bugs
 I had originally coded  the game into different functions and modules. Unfortunately, this created a number of issues and introduced bugs into the game. Due to time pressure and in order to get a working code, I abandoned the multiple modules approach, and I placed the body of the main code is one main module and fewer functions. This resolved most of the issues.
@@ -71,6 +72,8 @@ I had originally coded  the game into different functions and modules. Unfortuna
 However an example of a bug remains. When the player reaches the end of game, there is an option to select a number 1 or 2, to either continue or end the game. When I run the code from the main module part_one.py, if the player selects 2 the game ends, breaks in the terminal. When the game is running the from the run.py file, if the player select 2, the secret word line is printed along with the placeholder and the end game line is repeated. If the player selects 2 again the game will end. 
 
 I attempted a number of solutions, including moving the while == true loop which contains the break word.  Change the number_guess variable to 0, if 2 is selected, if the player had not exhausted all of his lives (wins the game), with different result but not quite fixing the bug. Unfortunately to due time and as it is not game breaking, it remains in the game.
+
+After the game was deployed to Heroku, the display did not show the placeholders in the same style as the terminal. The terminal placeholders had gap between each letter, but on Heroku display there no gaps. I did not want to use the list display style with the square brackets, and I had changed to .join style _ _ _ _ _ originally. But for playability and I decided to revert back to the list style **['_','_',]** . This was forced me, and would preferred to display the placeholder with brackets and commas.
 
 ## Deployment 
 As Python is a back-end language I am deploying the project to Heroku. To deploy the project, the follow steps must be followed.
