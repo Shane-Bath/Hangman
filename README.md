@@ -3,13 +3,13 @@
 
 # Hangman Game With Ascii art.
 
-A python hangman game with Ascii art. This is a simple hangman game written in Python. The objective of the game is to guess a hidden word by suggesting letters. The player can only make a limited number of incorrect guesses before losing the game.
+Python hangman game with Ascii art. This is a simple hangman game written in Python. The objective of the game is to guess a hidden word by suggesting letters. The player can only make a limited number of incorrect guesses before losing the game.
 
 ## Goal
 To create a game of hangman with the following futures.
-* Choice of catagories
-* Level of Difficulties  - number of lives
-* Select a random word save on a Google Spreedsheet
+* Choice of categories
+* Level of difficulties  - number of lives
+* Select a random word save on a Google Spreadsheet
 * Title page and end page made from Ascii art
 * Hangman Ascii character 
 * Store guesses
@@ -18,44 +18,48 @@ To create a game of hangman with the following futures.
 ## Design
 I began setting out the design of the game with a handwritten note. Going through basic function and rules of the game. I then used Lucidchart to create a flow chart of the game.
 
-This was a good exercise as It allowed me to break down the game in to smaller parts. With the flow chart and my note, I attempted to write code snippets to build each function of the game out separately, for example select a random word from a list or in this case a google spreadsheet, counting out the number of letters in the word, hiding the word etc. I have attempted this without reference to guides or book but to see what I could do with the knowledge I have at this stage. 
+![Lucidchart](/flowchart.png)
 
-Ascii art add graphics to the game and a 80's esthetic. 
+This was a good exercise as It allowed me to break down the game in to smaller parts. With the flow chart and my note, I attempted to write code snippets to build each function of the game out separately, for example select a random word from a list or in this case a google spreadsheet, counting out the number of letters in the word, hiding the word etc.
+
 
 ## How to play 
-* When you start the game, you will be asked to guess a letter in a the hidden word.
+* When you start the game, you will be asked to guess a letter in the hidden word.
 * The player will input a letter using a keyboard and pressing enter
 * If the letter is in the hidden word, it will be displayed, along with blank spaces representing the other letters in the hidden word.
-* If the letter is not in the hidden word, an ascii image will displayed representing a hangman gallows and figure. 
+* If the letter is not in the hidden word, an ascii image will be displayed representing a hangman gallows and figure. 
 * The player will lose a life. There will be a limited number of lives for the player.
 * The player will be asked to guess again.
-* If the player lose all their lives, the game will be over. This will represented by a completed hangman image.
-* If the player guess all the letter correctly, the player will win the game.
-* The player can choose to play again typing 'Y' when prompted or quit the game by tying 'N'.
+* If the player loses all their lives, the game will be over. This will be represented by a completed hangman image.
+* If the player can guess all the letter correctly, the player will win the game.
+* The player can choose to play again typing '1' when prompted or quit the game by tying '2'.
 
 ## Acseii Art
 [Wikapedia](https://en.wikipedia.org/wiki/ASCII_art) state that *ASCII art is a graphic design technique that uses computers for presentation and consists of pictures pieced together from the 95 printable (from a total of 128) characters defined by the ASCII Standard from 1963 and ASCII compliant character sets with proprietary extended characters (beyond the 128 characters of standard 7-bit ASCII). The term is also loosely used to refer to text-based visual art in general. ASCII art can be created with any text editor, and is often used with free-form languages. Most examples of ASCII art require a fixed-width font (non-proportional fonts, as on a traditional typewriter) such as Courier for presentation.*
 
-Used a [Acseii art generator](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20) to produce the Hangman title and end game title. 
+Used a [Acseii art generator](https://patorjk.com/software/taag/#p=display&f=Standard&t=Hangman) to produce the Hangman title and end game title. 
 
 For hangman gallows and stick man, I first practiced on Notepad and I completed the final version in the py file itself. 
 
-In order to display the image you have use enclose the *string* with three quotation marks, for example: """ *string* """. I had an issue with \ (backslash) as it is a special character in Python, but to you can use *r* which is *raw* python string. The character will be represented as a normal string if you place the *r* before 
+In order to display the image, you have use enclose the *string* with three quotation marks, for example: """ *string* """. I had an issue with \ (backslash) as it is a special character in Python, but to you can use *r* which is *raw* python string. The character will be represented as a normal string if you place the *r* before the apostrophes.
 
 
 ## Testing
-I have found the Pythontutor very helpful to test small of the code, a for loop etc. I am able to see at what point in the code, error is produced. I research the to come up with the solution or make a few changes run the code again. 
+I have found the Pythontutor very helpful to test and step into the code. Being able to see at what point in the code, an error is produced and the order that the code is read by the terminal helped me to better understand what I was attempting to do. 
 
-Example of issue:
-**Restarting the game created a number of issue for me. Originally the game was divided up into a number of functions, and I attempted to used Boolean False / True to change the state of game. This proved difficult and produced bugs. Becasue of time and probably lack of expericane / understanding, I restructed the game into one fuction and built a seperate fuction to reset the game. This function would either call the game() or stop the game.**
+![pythontutor](/pythontutor.png)
 
-Using Pythontutor it appeared the issue was the resettnig the variable wrong_guess which was reduced from 5 to 0 during the game. The variable is in the'global frame' and even though the variable has been assigned 5 in the reset_game() function, it does change the "global" variable. To resolve this i assigned the **global** to the wrong_guesses within the reset_game() function. 
+It allowed me to make a changes and I was better able to understand how the changes impacted the code. Often the error could be as simple as an incorrect indentation (often), or a syntax error etc. If the solution to the problem was not obvious to me,  I could  focus my research on the problem and try to come up with a solution.
 
-Without being able to step in each line of code and visually seening the global veriable was not being reset to 5, it would hae been difficult for me to pin point the issue. 
+I would take and connect the varies part the of code, and run it in the workspace terminal. Again going through each section of the code, trying to work out why the code is not executing as expected. It could be a simple indentation error or spelling mistake etc. Fix the issues and try again in pythontutor.  I would also redo the code and experiment with snippets of code from sources like stackover flow , WC3schools or python blogs, but a lot the code ended up on the cutting floor.
 
-I connect the varies part the of code, and run it in the workspace terminal. Again going through each section of the code, trying to work out why the code is not executing as expected. It could be a simple indentation error or spelling mistake etc. Fix the issues and try again.  I would also redo code and experiment with snippets of code from sources like stackover flow , WC3schools or python blogs, but a lot the code ended up on the cutting floor. 
+If the code did not work as expected, I would comment it out and try something else. As the project progressed, I would come back to the line, make changes based on my growing understanding of what I was doing, and sometimes end up using the line of code as I implemented the concept correctly.
 
-If the code did not work as expected, I would comment it out and try something else. As the project progressed, I would come back to the line, make changes based growing understanding of what I was doing, and end up using it. 
+Restarting the game proved to be an issue I unfortunately spent a significant amount of time trying to resolve in gitpod, unsuccessfully. I attempted a number of fixes and solutions, going down a few blind alleys. I designed the code to checked the variable wrong_guess to see at what stage of the player was in the game. This variable determined the beginning and end of the game. Even though I reset wrong_guess back to the original state in the function that controlled the restart of the game, the terminal would not recognize this, and it would continue to run the code in the end state. Eventually using Pythontutor I began to under the'global frame' and my reset function was not resetting the wrong_guess because it was out of the global frame. The variable had been assigned 5 in the reset_game() function, but it did change the "global" variable. To resolve this I assigned the **global** keyword to the wrong_guesses, which allowed for the variable to updated. 
+
+Without being able to step in each line of code and understanding that it was not being reset to 5, it would hae been difficult for me to pin point the issue. 
+
+I have no doubt that come up with a convoluted code to produce what the game actually does, and there will be a much more efficient way of doing it out there. But I now have a much better understanding of Python and it concepts. Thanks in large part to trying to brute force a solution onto a problem, experimenting and breaking the code, then fixing it.  
 
 Finally I asked my daughter and wife to play the game, while they played I note any changes I wanted to make. Which were a few as they saw the game differently to me. For example reprinting the word line later in game, or adding a list of incorrect letter. It was a useful exercise.
 
@@ -68,10 +72,10 @@ As Python is a back-end language I am deploying the project to Heroku. To deploy
 * Once the file has been updated, commit the changes and push to Github.
 * Login to Heroku, from the dashboard click "Create new app" and give the app an unique name.
 * Select region - Europe and click create app.
-* Click settings tab and select Config vars. In the field *key* enter CREDS, all uppercase. In thhe workspace copy the content of the creds.json file. Paste the data into the *value* field. Then click add.
+* Click settings tab and select Config vars. In the field *key* enter CREDS, all uppercase. In the workspace copy the content of the creds.json file. Paste the data into the *value* field. Then click add.
 * A config var will have be created, with **port** in the key field and **8000** in the *value* field. Click add. 
 * Next create Buildpack to install further dependencies outside of the one used in the requirements.txt file. Click *Add Buildpack*. The first buildpack required will be python, select **python**. Click save changes.
-* The next buildpack to select is *node.js*, agian click save changes. (The order must be python then node.js) Node.js is required for the mock terminal. 
+* The next buildpack to select is *node.js*, again click save changes. (The order must be python then node.js) Node.js is required for the mock terminal. 
 * Once you have completed the above you can choose the deployment method. Search for the Github repository name and click *connect*. This will links up Heroku to Github. 
 * Select the automatic deploy option. 
 
