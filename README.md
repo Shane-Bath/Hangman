@@ -65,6 +65,13 @@ Finally I asked my daughter and wife to play the game, while they played I note 
 
 ## Validator Testing
 
+## Bugs
+I had originally coded  the game into different functions and modules. Unfortunately, this created a number of issues and introduced bugs into the game. Due to time pressure and in order to get a working code, I abandoned the multiple modules approach, and I placed the body of the main code is one main module and fewer functions. This resolved most of the issues.
+
+However an example of a bug remains. When the player reaches the end of game, there is an option to select a number 1 or 2, to either continue or end the game. When I run the code from the main module part_one.py, if the player selects 2 the game ends, breaks in the terminal. When the game is running the from the run.py file, if the player select 2, the secret word line is printed along with the placeholder and the end game line is repeated. If the player selects 2 again the game will end. 
+
+I attempted a number of solutions, including moving the while == true loop which contains the break word.  Change the number_guess variable to 0, if 2 is selected, if the player had not exhausted all of his lives (wins the game), with different result but not quite fixing the bug. Unfortunately to due time and as it is not game breaking, it remains in the game.
+
 ## Deployment 
 As Python is a back-end language I am deploying the project to Heroku. To deploy the project, the follow steps must be followed.
 
