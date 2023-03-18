@@ -13,7 +13,6 @@ To create a game of hangman with the following futures.
 * Title page and end page made from Ascii art
 * Hangman Ascii character 
 * Store guesses
-* Adding words to the spreadsheet from the game.
 
 ## Design
 I began setting out the design of the game with a handwritten note. Going through basic function and rules of the game. I then used Lucidchart to create a flow chart of the game.
@@ -37,7 +36,7 @@ This was a good exercise as It allowed me to break down the game in to smaller p
 ## Acseii Art
 [Wikapedia](https://en.wikipedia.org/wiki/ASCII_art) state that *ASCII art is a graphic design technique that uses computers for presentation and consists of pictures pieced together from the 95 printable (from a total of 128) characters defined by the ASCII Standard from 1963 and ASCII compliant character sets with proprietary extended characters (beyond the 128 characters of standard 7-bit ASCII). The term is also loosely used to refer to text-based visual art in general. ASCII art can be created with any text editor, and is often used with free-form languages. Most examples of ASCII art require a fixed-width font (non-proportional fonts, as on a traditional typewriter) such as Courier for presentation.*
 
-Used a [Acseii art generator](https://patorjk.com/software/taag/#p=display&f=Standard&t=Hangman) to produce the Hangman title and end game title. 
+I Used a [Acseii art generator](https://patorjk.com/software/taag/#p=display&f=Standard&t=Hangman) to produce the Hangman title and end game title. 
 
 For hangman gallows and stick man, I first practiced on Notepad and I completed the final version in the py file itself. 
 
@@ -50,18 +49,17 @@ I have found the Pythontutor very helpful to test and step into the code. Being 
 ![pythontutor](/images/pythontutor.png)
 
 It allowed me to make a changes and I was better able to understand how the changes impacted the code. Often the error could be as simple as an incorrect indentation (often), or a syntax error etc. If the solution to the problem was not obvious to me,  I could  focus my research on the problem and try to come up with a solution.
-
-I would take and connect the varies part the of code, and run it in the workspace terminal. Again going through each section of the code, trying to work out why the code is not executing as expected. It could be a simple indentation error or spelling mistake etc. Fix the issues and try again in pythontutor.  I would also redo the code and experiment with snippets of code from sources like stackover flow , WC3schools or python blogs, but a lot the code ended up on the cutting floor.
+Then redo the code and experiment with snippets of code from sources like stackover flow , WC3schools or python blogs, try again in pythontutor. A lot of the code ended up on the cutting floor and 
 
 If the code did not work as expected, I would comment it out and try something else. As the project progressed, I would come back to the line, make changes based on my growing understanding of what I was doing, and sometimes end up using the line of code as I implemented the concept correctly.
 
-As an example, restarting the game proved to be an issue I unfortunately spent a significant amount of time trying to resolve in gitpod, unsuccessfully. I attempted a number of fixes and solutions, going down a few blind alleys. I designed the code to checked the variable wrong_guess to see at what stage of the player was in the game. This variable determined the beginning and end of the game. Even though I reset wrong_guess back to the original state in the function that controlled the restart of the game, the terminal would not recognize this, and it would continue to run the code in the end state. Eventually using Pythontutor I began to under the'global frame' and that my reset function was not resetting the wrong_guess because it was out of the global frame. The variable had been assigned 5 in the reset_game() function, but it did not change the "global" variable. To resolve this I assigned the **global** keyword to the wrong_guesses, which allowed for the variable to updated. 
+As an example, restarting the game proved to be an issue. I unfortunately spent a significant amount of time trying to resolve in gitpod, unsuccessfully. I attempted a number of fixes and solutions, going down a few blind alleys. I designed the code to check the variable wrong_guess to see at what stage of the player was in the game. This variable determined the beginning and end of the game. Even though I reset wrong_guess back to the original state in the function that controlled the restart of the game, the terminal would not recognize this, and it would continue to run the code in the end state. Eventually using Pythontutor I began to understand the'global frame' and that my reset function was not resetting the wrong_guess because it was out of the global frame. The variable had been assigned 5 in the reset_game() function, but it did not change the "global" variable. To resolve this I assigned the **global** keyword to the wrong_guesses, which allowed for the variable to updated. 
 
-Without being able to step in each line of code and understanding that it was not being reset to 5, it would hae been difficult for me to pin point the issue. 
+Without being able to step in each line of the code and see that it was not being reset to 5, it would hae been difficult for me to pin point the issue. 
 
-I have no doubt that come up with a convoluted code to produce what the game actually does, and there will be a much more efficient way of doing it out there. But I now have a much better understanding of Python and it concepts. Thanks in large part to trying to brute force a solution onto a problem, experimenting and breaking the code, then fixing it.  
+I have no doubt that I have come up with a convoluted code to produce what the game actually does, and there will be a much more efficient way of doing, it out there. But I now have a much better understanding of Python and it concepts. Thanks in large part to trying to brute force a solution onto a problem, experimenting and breaking the code, then fixing it.  
 
-Finally I asked my daughter and wife to play the game, while they played I note any changes I wanted to make. Which were a few as they saw the game differently to me. For example reprinting the word line later in game, or adding a list of incorrect letter. It was a useful exercise.
+Finally I asked my daughter and wife to play the game, while they played I noted any changes I wanted to make. Which were a few as they saw the game differently to me. It was a useful exercise.
 
 ## Validator Testing
 I could not find any official python validator.
@@ -69,11 +67,11 @@ I could not find any official python validator.
 ## Bugs
 I had originally coded  the game into different functions and modules. Unfortunately, this created a number of issues and introduced bugs into the game. Due to time pressure and in order to get a working code, I abandoned the multiple modules approach, and I placed the body of the main code is one main module and fewer functions. This resolved most of the issues.
 
-However an example of a bug remains. When the player reaches the end of game, there is an option to select a number 1 or 2, to either continue or end the game. When I run the code from the main module part_one.py, if the player selects 2 the game ends, breaks in the terminal. When the game is running the from the run.py file, if the player select 2, the secret word line is printed along with the placeholder and the end game line is repeated. If the player selects 2 again the game will end. 
+However an example of a bug remains. When the player reaches the end of game, there is an option to select a number 1 or 2, to either continue or end the game. When I ran the code from the main module part_one.py, if the player selects 2 the game ends, breaks in the terminal. When the game is run from the run.py file, when the player select 2, the secret word line is printed along with the placeholder and the end game line is repeated. If the player selects 2 again the game will end. 
 
-I attempted a number of solutions, including moving the while == true loop which contains the break word.  Change the number_guess variable to 0, if 2 is selected, if the player had not exhausted all of his lives (wins the game), with different result but not quite fixing the bug. Unfortunately to due time and as it is not game breaking, it remains in the game.
+I attempted a number of solutions, including moving the while == true loop which contains the break word.  Change the number_guess variable to 0 etc, but not quite fixing the bug. Unfortunately to due time and as it is not game breaking, it remains in the game.
 
-After the game was deployed to Heroku, the display did not show the placeholders in the same style as the terminal. The terminal placeholders had gap between each letter, but on Heroku display there no gaps. I did not want to use the list display style with the square brackets, and I had changed to .join style _ _ _ _ _ originally. But for playability and I decided to revert back to the list style **['_','_',]** . This was forced me, and would preferred to display the placeholder with brackets and commas.
+After the game was deployed to Heroku, the display did not show the placeholders in the same style as the terminal. The terminal placeholders had a gap between each letter, but on Heroku display there were no gaps. I did not want to use the list display style with the square brackets, and I had changed to .join style _ _ _ _ _ originally. But for playability and I decided to revert back to the list style **['_','_',]** . This was forced on me, and would have preferred to display the placeholder with brackets and commas.
 
 ## Deployment 
 As Python is a back-end language I am deploying the project to Heroku. To deploy the project, the follow steps must be followed.
