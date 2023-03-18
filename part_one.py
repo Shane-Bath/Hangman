@@ -15,28 +15,43 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 
-# game_over = False
 list_of_guess = []
-# print(list_of_guess)
 wrong_guesses = 5
 
 print(title)
+
+def clear_screen():
+    """
+    To clear screen after each turn, on both windowOS and MacOs
+    """
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+
+# clear_screen()
 
 def reset_game():
     global wrong_guesses
     global list_of_guess
     global game_over
-    option = input("Do you want to play again? Select 1 for YES OR 2 for NO?\n")
+    global new_word
+    option = input("Do you want to play again?\nChoose 1 for YES OR 2 for NO?\n")
     if option == '1':
         wrong_guesses = 5
         list_of_guess = []
+        clear_screen()
+        # os.system('clear')
         print(title)
         game()
+    
     else:
         game_over = True
 
 
 def game():
+    """
+    A word is choosen randomly from a list of words in Google Sheet and saved to a
+    veriable selected_word. The player guesess a letter. 
+    """
     global wrong_guesses
     global list_of_guess
     global game_over 
@@ -46,16 +61,18 @@ def game():
     list_words = words.col_values(1)
     random_word = random.choice(list_words).lower()
     selected_word = random_word
-    # print(selected_word)
+  
     print("The secert word is ?")
 
     for letter in selected_word:
         placeholder += "_"
     print(''.join(placeholder))
+    print("\n")
 
     while wrong_guesses > 0:
         if game_over == True:
-            os.system('clear')
+            clear_screen()
+            # os.system('clear')
             break
         user_input = input("Guess a letter:\n")
         if not re.match("^[a-z]*$", user_input):
@@ -65,11 +82,12 @@ def game():
             print('Pick one letter only')
             user_input = input("Guess a letter:\n")
         elif user_input in list_of_guess:
-            print("guess again")
+            print("You have already used this letter, guess again")
             user_input = input("Guess a letter:\n")
         
         list_of_guess += user_input
-        os.system('clear')
+        # os.system('clear')
+        clear_screen()
         
         letter_guess = user_input.lower()
      

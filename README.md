@@ -125,7 +125,7 @@ https://stackoverflow.com/questions/11178061/print-list-without-brackets-in-a-si
 https://www.geeksforgeeks.org/clear-screen-python/
 https://stackoverflow.com/questions/8761778/limiting-python-input-strings-to-certain-characters-and-lengths
 https://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response?noredirect=1&lq=1
-
+https://stackoverflow.com/questions/2084508/clear-terminal-in-python
 
 ![acsii final image](/winner.png)
 
