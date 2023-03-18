@@ -15,7 +15,7 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 
-game_over = False
+# game_over = False
 list_of_guess = []
 # print(list_of_guess)
 wrong_guesses = 5
@@ -66,7 +66,7 @@ def game():
         elif user_input in list_of_guess:
             print("guess again")
             user_input = input("\nGuess a letter: ")
-
+        
         list_of_guess += user_input
         os.system('clear')
         
